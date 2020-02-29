@@ -23,7 +23,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainActivity
         return new Intent(context, MainActivity.class);
     }
 
-
     private MainActivityViewModel mainActivityViewModel;
 
     @Override

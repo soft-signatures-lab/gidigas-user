@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.enyata.framework.mvvm.R;
 import com.enyata.framework.mvvm.ViewModelProviderFactory;
+import com.enyata.framework.mvvm.databinding.ActivityLoginBinding;
 import com.enyata.framework.mvvm.ui.base.BaseActivity;
 
 import javax.inject.Inject;
@@ -32,7 +33,6 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
         loginViewModel = ViewModelProviders.of(this,factory).get(LoginViewModel.class);
         return loginViewModel;
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

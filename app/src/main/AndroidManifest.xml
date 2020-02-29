@@ -44,8 +44,7 @@
             android:launchMode="singleTop" />
 
         <activity
-            android:name="com.enyata.framework.mvvm.ui.login.LoginActivity"
-            android:launchMode="singleTop" />
+            android:name="com.enyata.framework.mvvm.ui.login.LoginActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"
