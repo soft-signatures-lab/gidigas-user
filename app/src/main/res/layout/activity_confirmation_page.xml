@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.enyata.framework.mvvm.ui.confirmationpage.ConfirmationPageActivity">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.enyata.framework.mvvm.ui.confirmationpage.ConfirmationPageViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginTop="27dp">
+
+        <ImageView
+            android:onClick="@{()->viewModel.arrowConfirm()}"
+            android:id="@+id/arrow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_bluearrow"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="7dp"
+            android:fontFamily="@font/lato"
+            android:text="Enter\nConfirmation Code"
+            android:textSize="35sp"
+            android:textColor="#263746"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/lato"
+            android:textColor="#263746"
+            android:alpha="0.5"
+            android:text="Enter code sent in SMS to [receiver’s p. number]."
+            />
+
+        <LinearLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+            <EditText
+                android:id="@+id/pinCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/lato"
+                android:drawableLeft="@drawable/ic_password"
+                android:drawablePadding="20dp"
+                android:gravity="start"
+                android:hint="Pin"
+                android:inputType="number"
+                android:padding="15dp" />
+
+            <TextView
+                android:id="@+id/hint1"
+                android:layout_width="match_parent"
+                android:layout_height="19dp"
+                android:layout_marginTop="-8dp"
+                android:background="#ff0000"
+                android:fontFamily="@font/lato"
+                android:gravity="center"
+                android:text="*invalid pin"
+                android:textColor="#fff"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <Button
+            android:onClick="@{()->viewModel.ConfirmSuccess()}"
+            android:id="@+id/ConfirmPage"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:fontFamily="@font/lato"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_deposit_layer"
+            android:text="Withdrawal"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            />
+
+    </LinearLayout>
+
+</layout>

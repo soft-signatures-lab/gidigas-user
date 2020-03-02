@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.enyata.framework.mvvm.ui.transactionhistory.TransactionHistoryActivity">
+
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.enyata.framework.mvvm.ui.transactionhistory.TransactionHistoryViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            android:background="@drawable/ic_bg_pages"
+            >
+            <ImageView
+                android:id="@+id/TransactionArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="25dp"
+                app:srcCompat="@drawable/ic_arrow"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp">
+
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
+                    android:textStyle="bold"
+                    android:lineHeight="20dp"
+                    android:text="Jane Doe\n234561020940832"
+                    android:textColor="#fff"/>
+
+
+                <RelativeLayout
+                    android:id="@+id/creditDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:layout_alignParentRight="true"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Credit"
+                        android:textStyle="bold"
+                        android:textColor="#fff"
+                        />
+
+                    <TextView
+                        android:id="@+id/text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="209.72"
+                        android:layout_marginTop="15dp"
+                        android:textSize="40sp"
+                        android:textColor="#fff"/>
+                    <TextView
+                        android:id="@+id/ghc"
+                        android:layout_toRightOf="@+id/text"
+                        android:paddingTop="35dp"
+                        android:paddingLeft="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ghc"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:textSize="16sp"
+                        android:textColor="#fff"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transaction History"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</layout>

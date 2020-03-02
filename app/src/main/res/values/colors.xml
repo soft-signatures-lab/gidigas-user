@@ -31,6 +31,7 @@
     <color name="translucent_white">#88ffffff</color>
     <color name="fb">#3b5998</color>
     <color name="google">#d34836</color>
+    <color name="colorBlue">@color/blue</color>
 
     <!--Design colors-->
     <color name="red_dark">#F06423</color>
@@ -47,4 +48,5 @@
     <color name="blue_grey_light">#A5B4C8</color>
     <color name="orange">#FFA500</color>
     <color name="yellow">#fff44f</color>
+    <color name="blue">#2553CF</color>
 </resources>

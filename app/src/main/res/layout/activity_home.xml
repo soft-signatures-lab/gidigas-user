@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.enyata.framework.mvvm.ui.home.HomeActivity">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.enyata.framework.mvvm.ui.home.HomeViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ic_bg_layer1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/lato"
+                    android:lineHeight="20dp"
+                    android:text="Jane Doe\n0101010101010101"
+                    android:textColor="#fff"/>
+
+                <RelativeLayout
+                    android:id="@+id/creditDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato"
+                        android:text="Credit"
+                        android:textStyle="bold"
+                        android:textColor="#fff"
+                        />
+
+                    <TextView
+                        android:id="@+id/text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato"
+                        android:text="209.72"
+                        android:layout_marginTop="10dp"
+                        android:textSize="50sp"
+                        android:textColor="#fff"/>
+                    <TextView
+                        android:id="@+id/ghc"
+                        android:layout_toRightOf="@+id/text"
+                        android:paddingTop="37dp"
+                        android:paddingLeft="8dp"
+                        android:fontFamily="@font/lato"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ghc"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:textSize="16sp"
+                        android:textColor="#fff"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:rowCount="2"
+            android:columnCount="2"
+            android:layout_marginTop="30dp">
+
+            <Button
+                android:onClick="@{()->viewModel.onDeposit()}"
+                android:id="@+id/BtnDeposit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:paddingTop="25dp"
+                android:paddingBottom="25dp"
+                android:fontFamily="@font/lato"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:drawableTop="@drawable/ic_deposit"
+                android:text="\nDeposits"
+                android:textAllCaps="false"
+                android:background="@drawable/ic_btn_layer"
+                android:textColor="#fff"
+                android:layout_gravity="fill"
+                />
+
+            <Button
+                android:onClick="@{()->viewModel.onWithdrawal()}"
+                android:id="@+id/BtnWithdrawal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:paddingTop="25dp"
+                android:paddingBottom="25dp"
+                android:fontFamily="@font/lato"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:drawableTop="@drawable/ic_withdrawal"
+                android:text="\nWithdrawal"
+                android:background="@drawable/ic_btn_layer"
+                android:textColor="#fff"
+                android:textAllCaps="false"
+                android:layout_gravity="fill"
+                />
+
+            <Button
+                android:onClick="@{()->viewModel.onTransaction()}"
+                android:id="@+id/BtnTransaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="17dp"
+                android:fontFamily="@font/lato"
+                android:paddingTop="25dp"
+                android:paddingBottom="25dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:drawableTop="@drawable/ic_transaction"
+                android:text="\nTransaction History"
+                android:background="@drawable/ic_btn_layer"
+                android:textColor="#fff"
+                android:textSize="13sp"
+                android:textAllCaps="false"
+                android:layout_gravity="fill"
+                />
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="17dp"
+                android:paddingTop="25dp"
+                android:paddingBottom="25dp"
+                android:fontFamily="@font/lato"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:drawableTop="@drawable/ic_support"
+                android:text="Support"
+                android:background="@drawable/ic_btn_layer"
+                android:textColor="#fff"
+                android:textSize="13sp"
+                android:textAllCaps="false"
+                android:layout_gravity="fill"
+                />
+        </GridLayout>
+
+        <Button
+            android:id="@+id/BtnLogOut"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="55dp"
+            android:background="@drawable/ic_btn_layer"
+            android:text="Log Out"
+            android:textSize="16sp"
+            android:fontFamily="@font/lato"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            />
+    </LinearLayout></layout>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.enyata.framework.mvvm.ui.withdrawal.WithdrawalActivity">
+
+
+<data>
+<variable
+    name="viewModel"
+    type="com.enyata.framework.mvvm.ui.withdrawal.WithdrawalViewModel" />
+</data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            android:background="@drawable/ic_bg_pages"
+            >
+            <ImageView
+                android:onClick="@{()->viewModel.onarrowPin()}"
+                android:id="@+id/withdrawArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="25dp"
+                app:srcCompat="@drawable/ic_arrow"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp">
+
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/lato"
+                    android:lineHeight="20dp"
+                    android:text="Jane Doe\n234561020940832"
+                    android:textColor="#fff"/>
+
+
+                <RelativeLayout
+                    android:id="@+id/creditDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:layout_alignParentRight="true"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato"
+                        android:text="Credit"
+                        android:textStyle="bold"
+                        android:textColor="#fff"
+                        />
+
+                    <TextView
+                        android:id="@+id/text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato"
+                        android:text="209.72"
+                        android:layout_marginTop="15dp"
+                        android:textSize="40sp"
+                        android:textColor="#fff"/>
+                    <TextView
+                        android:id="@+id/ghc"
+                        android:layout_toRightOf="@+id/text"
+                        android:paddingTop="35dp"
+                        android:paddingLeft="8dp"
+                        android:fontFamily="@font/lato"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ghc"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:textSize="16sp"
+                        android:textColor="#fff"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato"
+                android:text="Withdrawal"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/phoneWithdrawal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/lato"
+                    android:drawableLeft="@drawable/ic_phone"
+                    android:drawablePadding="20dp"
+                    android:gravity="start"
+                    android:hint="+234 8000000"
+                    android:inputType="number"
+                    android:padding="15dp" />
+
+                <TextView
+                    android:id="@+id/hintPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="-8dp"
+                    android:background="#2553CF"
+                    android:fontFamily="@font/lato"
+                    android:gravity="center"
+                    android:text="*Enter phone number to request credit from"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/WithdrawalCoin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/lato"
+                    android:drawableLeft="@drawable/ic_coin"
+                    android:drawablePadding="20dp"
+                    android:gravity="start"
+                    android:hint="0.00"
+                    android:inputType="number"
+                    android:padding="15dp" />
+
+                <TextView
+                    android:id="@+id/hintCoin"
+                    android:layout_width="match_parent"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="-8dp"
+                    android:background="#2553CF"
+                    android:fontFamily="@font/lato"
+                    android:gravity="center"
+                    android:text="*Receive this much in credit (same as amount of cash received)"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <Button
+                android:onClick="@{()->viewModel.onWithdrawalPin()}"
+                android:id="@+id/BtnWithdrawal1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/lato"
+                android:background="@drawable/ic_deposit_layer"
+                android:text="Withdraw"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

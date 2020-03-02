@@ -1,5 +1,6 @@
 package com.enyata.framework.mvvm.ui.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.lifecycle.ViewModelProviders;
@@ -8,6 +9,7 @@ import com.enyata.framework.mvvm.R;
 import com.enyata.framework.mvvm.ViewModelProviderFactory;
 import com.enyata.framework.mvvm.databinding.ActivityLoginBinding;
 import com.enyata.framework.mvvm.ui.base.BaseActivity;
+import com.enyata.framework.mvvm.ui.setPin.SetPinActivity;
 
 import javax.inject.Inject;
 
@@ -38,5 +40,11 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         loginViewModel.setNavigator(this);
+    }
+
+    @Override
+    public void onlogin() {
+        Intent intent = new Intent(getApplicationContext(), SetPinActivity.class);
+        startActivity(intent);
     }
 }

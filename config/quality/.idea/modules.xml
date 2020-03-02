@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/quality.iml" filepath="$PROJECT_DIR$/quality.iml" group="quality" />
+      <module fileurl="file://$PROJECT_DIR$/quality.iml" filepath="$PROJECT_DIR$/quality.iml" />
     </modules>
   </component>
 </project>

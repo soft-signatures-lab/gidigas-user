@@ -1,5 +1,3 @@
-
-
 <resources>
     <string name="app_name">MvvmApp</string>
 
@@ -34,11 +32,6 @@
 
     <!--Login Validation-->
     <string name="invalid_email_password">Please provide a valid email and password.</string>
-
-
-
-
-
 
 
 </resources>

@@ -16,9 +16,19 @@
 
 package com.enyata.framework.mvvm.di.builder;
 
+import com.enyata.framework.mvvm.ui.confirmationpage.ConfirmationPageActivity;
+import com.enyata.framework.mvvm.ui.confirmationsuccess.ConfirmSuccessActivity;
+import com.enyata.framework.mvvm.ui.deposit.DepositActivity;
+import com.enyata.framework.mvvm.ui.depositpin.DepositPinActivity;
+import com.enyata.framework.mvvm.ui.depositsucess.DepositSuccessActivity;
+import com.enyata.framework.mvvm.ui.home.HomeActivity;
 import com.enyata.framework.mvvm.ui.login.LoginActivity;
 import com.enyata.framework.mvvm.ui.mainActivity.MainActivity;
+import com.enyata.framework.mvvm.ui.setPin.SetPinActivity;
 import com.enyata.framework.mvvm.ui.splash.SplashActivity;
+import com.enyata.framework.mvvm.ui.transactionhistory.TransactionHistoryActivity;
+import com.enyata.framework.mvvm.ui.withdrawal.WithdrawalActivity;
+import com.enyata.framework.mvvm.ui.withdrawalpin.WithdrawalPinActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -34,4 +44,39 @@ public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector
     abstract LoginActivity bindLoginActivity();
+
+    @ContributesAndroidInjector
+    abstract SetPinActivity bindSetPinActivity();
+
+    @ContributesAndroidInjector
+    abstract HomeActivity bindHomeActivity();
+
+    @ContributesAndroidInjector
+    abstract ConfirmationPageActivity bindConfirmationPageActivity();
+
+    @ContributesAndroidInjector
+    abstract ConfirmSuccessActivity bindConfirmSuccessActivity();
+
+
+    @ContributesAndroidInjector
+    abstract DepositActivity bindDepositActivity();
+
+    @ContributesAndroidInjector
+    abstract DepositPinActivity bindDepositPinActivity();
+
+    @ContributesAndroidInjector
+    abstract DepositSuccessActivity bindDepositSuccessActivity();
+
+    @ContributesAndroidInjector
+    abstract WithdrawalActivity bindWithdrawalActivity();
+
+    @ContributesAndroidInjector
+    abstract WithdrawalPinActivity bindWithdrawalPinActivity();
+
+    @ContributesAndroidInjector
+    abstract TransactionHistoryActivity bindTransactionHistoryActivity();
+
+
+
+
 }

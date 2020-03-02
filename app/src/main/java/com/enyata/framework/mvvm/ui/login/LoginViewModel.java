@@ -5,7 +5,13 @@ import com.enyata.framework.mvvm.ui.base.BaseViewModel;
 import com.enyata.framework.mvvm.utils.rx.SchedulerProvider;
 
 public class LoginViewModel extends BaseViewModel<LoginNavigator> {
+
     public LoginViewModel(DataManager dataManager, SchedulerProvider schedulerProvider) {
         super(dataManager, schedulerProvider);
+    }
+
+    public  void onLogin(){
+        getNavigator().onlogin();
+
     }
 }
