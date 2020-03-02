@@ -134,7 +134,7 @@
                     android:background="#2553CF"
                     android:fontFamily="@font/lato"
                     android:gravity="center"
-                    android:text="*Enter valid pin"
+                    android:text="Enter valid pin"
                     android:textColor="#fff"
                     android:textSize="12sp"
                     android:maxLength="6"
@@ -218,7 +218,7 @@
                 android:textColor="#4F4F4F"
                 android:textStyle="bold"/>
             <Button
-                android:id="@+id/BtnCancel"
+                android:id="@+id/BtnCancelDeposit"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="35dp"

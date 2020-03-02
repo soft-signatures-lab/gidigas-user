@@ -19,4 +19,6 @@ public class HomeViewModel extends BaseViewModel<HomeNavigator> {
     public  void onTransaction(){
         getNavigator().ontransaction();
     }
+
+
 }

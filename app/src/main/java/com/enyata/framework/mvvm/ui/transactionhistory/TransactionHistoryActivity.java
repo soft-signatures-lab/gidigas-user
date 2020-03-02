@@ -13,6 +13,7 @@ import com.enyata.framework.mvvm.databinding.ActivityTransactionHistoryBinding;
 import com.enyata.framework.mvvm.databinding.ActivityWithdrawalBinding;
 import com.enyata.framework.mvvm.ui.base.BaseActivity;
 import com.enyata.framework.mvvm.ui.home.HomeActivity;
+import com.enyata.framework.mvvm.ui.withdrawal.WithdrawalActivity;
 
 import javax.inject.Inject;
 
@@ -43,4 +44,9 @@ private TransactionHistoryViewModel transactionHistoryViewModel;
     }
 
 
+    @Override
+    public void transactionArrow() {
+        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+        startActivity(intent);
+    }
 }
