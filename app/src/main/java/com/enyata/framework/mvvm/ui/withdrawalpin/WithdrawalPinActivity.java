@@ -56,30 +56,32 @@ WithdrawalPinViewModel withdrawalPinViewModel;
         super.onCreate(savedInstanceState);
         withdrawalPinViewModel.setNavigator(this);
 
-        hintPin = findViewById(R.id.hintPin1);
-        pin = findViewById(R.id.pinWithdraw);
-        pin.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (!TextUtils.isEmpty(s) && Integer.parseInt(s.toString()) == 1234) {
-                    hintPin.setBackgroundColor(Color.parseColor("#2553CF"));
-                    hintPin.setText("correct pin");
-                }else{
-                    hintPin.setVisibility(View.VISIBLE);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
+//        hintPin = findViewById(R.id.hintPin1);
+//        pin = findViewById(R.id.pinWithdraw);
+//
+//
+//        pin.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//                if (!TextUtils.isEmpty(s) && Integer.parseInt(s.toString()) == 1234) {
+//                    hintPin.setBackgroundColor(Color.parseColor("#2553CF"));
+//                    hintPin.setText("correct pin");
+//                }else{hintPin.setBackgroundColor(Color.parseColor("#fff000"));
+//                    hintPin.setText("incorrect pin");
+//                }
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//            }
+//        });
+//
 
 
         btnCancel = findViewById(R.id.BtnCancel);

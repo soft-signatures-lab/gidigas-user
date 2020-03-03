@@ -24,12 +24,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="27dp"
-        android:paddingRight="40dp"
         android:textColor="#4F4F4F"
         android:fontFamily="@font/lato"
         android:lineHeight="25dp"
-        android:text="Credit will not be transfered.\nYou must return any cash received \nfor this withdrawal!t"
-        android:textSize="14sp" />
+        android:text="Credit will not be transfered.You must return any cash received for this withdrawal!t"
+        android:textSize="15sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -46,7 +45,6 @@
         <TextView
             android:id="@+id/AlertWithdraw"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="30dp"
             android:layout_width="wrap_content"
             android:fontFamily="@font/lato"
             android:layout_height="wrap_content"

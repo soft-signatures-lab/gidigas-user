@@ -63,7 +63,7 @@ DepositPinViewModel depositPinViewModel;
             }
         });
 
-        btnCancel = findViewById(R.id.BtnCancel);
+        btnCancel = findViewById(R.id.BtnCancelDeposit);
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

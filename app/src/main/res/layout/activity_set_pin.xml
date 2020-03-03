@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:gravity="center"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         >
@@ -22,7 +23,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="61dp"
             android:gravity="center"
             android:orientation="vertical">
             <ImageView
@@ -42,16 +42,18 @@
 
 
         </LinearLayout>
+
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:textSize="17sp"
             android:fontFamily="@font/lato"
+            android:textColor="#002637"
+            android:alpha="0.5"
             android:lineHeight="20dp"
-            android:text="To properly secure your funds, please set up a \n                personal 4-digit security PIN.
-\nYou’ll need it for every transaction you’ll make."/>
-
+            android:text="To properly secure your funds, please set up a personal 4-digit security PIN.\nYou’ll need it for every transaction you’ll make."
+            android:textSize="17sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"

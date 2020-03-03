@@ -11,10 +11,16 @@
             type="com.enyata.framework.mvvm.ui.depositpin.DepositPinViewModel" />
     </data>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+
+
         >
 
         <LinearLayout
@@ -31,66 +37,72 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="25dp"
                 app:srcCompat="@drawable/ic_arrow"/>
-            <RelativeLayout
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:layout_marginTop="25dp"
                 android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp">
+                android:orientation="horizontal"
+                >
 
 
                 <TextView
                     android:id="@+id/text1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="45dp"
                     android:fontFamily="@font/lato"
-                    android:textStyle="bold"
+                    android:layout_marginTop="15dp"
                     android:lineHeight="20dp"
                     android:text="Jane Doe\n234561020940832"
-                    android:textColor="#fff"/>
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
 
 
                 <RelativeLayout
                     android:id="@+id/creditDetail"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:gravity="end"
+
+
+
                     >
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/lato"
                         android:text="Credit"
-                        android:textStyle="bold"
                         android:textColor="#fff"
-                        />
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:id="@+id/text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
                         android:fontFamily="@font/lato"
                         android:text="209.72"
-                        android:layout_marginTop="15dp"
-                        android:textSize="40sp"
-                        android:textColor="#fff"/>
+                        android:textColor="#fff"
+                        android:textSize="40sp" />
+
                     <TextView
                         android:id="@+id/ghc"
-                        android:layout_toRightOf="@+id/text"
-                        android:paddingTop="35dp"
-                        android:paddingLeft="8dp"
-                        android:fontFamily="@font/lato"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/text"
+                        android:fontFamily="@font/lato"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="35dp"
                         android:text="ghc"
-                        android:textStyle="bold"
                         android:textAllCaps="true"
+                        android:textColor="#fff"
                         android:textSize="16sp"
-                        android:textColor="#fff"/>
+                        android:textStyle="bold" />
                 </RelativeLayout>
-            </RelativeLayout>
+            </LinearLayout>
 
         </LinearLayout>
         <LinearLayout
@@ -99,12 +111,14 @@
             android:layout_marginLeft="21dp"
             android:layout_marginRight="21dp"
             android:layout_marginTop="27dp"
+            android:gravity="fill"
             android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/lato"
                 android:textColor="#4F4F4F"
+
                 android:textSize="16sp"
                 android:text="Enter your personal security PIN code."/>
 
@@ -134,10 +148,9 @@
                     android:background="#2553CF"
                     android:fontFamily="@font/lato"
                     android:gravity="center"
-                    android:text="Enter valid pin"
+                    android:text="*Enter valid pin"
                     android:textColor="#fff"
                     android:textSize="12sp"
-                    android:maxLength="6"
                     android:visibility="gone"/>
             </LinearLayout>
 
@@ -145,8 +158,8 @@
                 android:onClick="@{()->viewModel.onDepositSuccess()}"
                 android:id="@+id/moveSuccessPage"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
                 android:fontFamily="@font/lato"
                 android:background="@drawable/ic_deposit_layer"
                 android:text="Deposit"
@@ -169,20 +182,22 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
+                android:textColor="#4F4F4F"
                 android:text="Transaction Type"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Withdrawal"
+                android:text="Deposit"
                 android:textColor="#4F4F4F"
                 android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
+                android:textColor="#4F4F4F"
                 android:text="Name"/>
 
             <TextView
@@ -195,7 +210,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
+                android:textColor="#4F4F4F"
                 android:text="Phone no"/>
 
             <TextView
@@ -208,7 +224,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
+                android:textColor="#4F4F4F"
                 android:text="Amount"/>
 
             <TextView
@@ -221,7 +238,7 @@
                 android:id="@+id/BtnCancelDeposit"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/lato"
                 android:background="@drawable/ic_btn_layer"
                 android:text="Cancel Transaction"
@@ -234,4 +251,6 @@
 
 
     </LinearLayout>
+
+    </ScrollView>
 </layout>
