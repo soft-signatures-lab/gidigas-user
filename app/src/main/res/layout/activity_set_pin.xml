@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center"
+       android:layout_marginTop="65dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         >
@@ -51,9 +51,9 @@
             android:fontFamily="@font/lato"
             android:textColor="#002637"
             android:alpha="0.5"
-            android:lineHeight="20dp"
-            android:text="To properly secure your funds, please set up a personal 4-digit security PIN.\nYou’ll need it for every transaction you’ll make."
-            android:textSize="17sp" />
+            android:lineHeight="22dp"
+            android:text="To properly secure your funds, please set up a personal 4-digit security PIN.You’ll need it for every transaction you’ll make."
+            android:textSize="15sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
