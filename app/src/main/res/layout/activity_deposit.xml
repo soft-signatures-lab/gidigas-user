@@ -135,7 +135,7 @@
                     android:fontFamily="@font/lato"
                     android:gravity="start"
                     android:hint="Phone number"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:maxLength="11"
                     android:padding="15dp" />
                 <TextView
@@ -166,11 +166,9 @@
                     android:drawableLeft="@drawable/ic_coin"
                     android:drawablePadding="20dp"
                     android:fontFamily="@font/lato"
-                    android:digits="0123456789"
-                    android:maxLength="5"
                     android:gravity="start"
                     android:hint="0.00"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:padding="15dp" />
 
                 <TextView

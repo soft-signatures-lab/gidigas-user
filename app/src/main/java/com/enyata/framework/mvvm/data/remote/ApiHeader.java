@@ -50,9 +50,9 @@ public class ApiHeader {
 
     public static final class ProtectedApiHeader {
 
-        @Expose
-        @SerializedName("access_token")
-        private String mAccessToken;
+//        @Expose
+//        @SerializedName("access_token")
+//        private String mAccessToken;
 
         @Expose
         @SerializedName("api_key")
@@ -65,16 +65,17 @@ public class ApiHeader {
         public ProtectedApiHeader(String mApiKey, Long mUserId, String mAccessToken) {
             this.mApiKey = mApiKey;
             this.mUserId = mUserId;
-            this.mAccessToken = mAccessToken;
-        }
 
-        public String getAccessToken() {
-            return mAccessToken;
         }
+        //this.mAccessToken = mAccessToken;
 
-        public void setAccessToken(String accessToken) {
-            mAccessToken = accessToken;
-        }
+//        public String getAccessToken() {
+//            return mAccessToken;
+//        }
+
+//        public void setAccessToken(String accessToken) {
+//            mAccessToken = accessToken;
+//        }
 
         public String getApiKey() {
             return mApiKey;

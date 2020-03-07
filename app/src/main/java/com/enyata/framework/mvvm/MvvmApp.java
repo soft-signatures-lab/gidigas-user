@@ -18,14 +18,17 @@ package com.enyata.framework.mvvm;
 
 import android.app.Activity;
 import android.app.Application;
+
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.BuildConfig;
 import com.androidnetworking.interceptors.HttpLoggingInterceptor;
 import com.enyata.framework.mvvm.di.component.DaggerAppComponent;
 import com.enyata.framework.mvvm.utils.AppLogger;
+
+import javax.inject.Inject;
+
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
-import javax.inject.Inject;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 

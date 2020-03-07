@@ -1,6 +1,5 @@
 package com.enyata.framework.mvvm.ui.transactionhistory;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
@@ -8,18 +7,17 @@ import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.enyata.framework.mvvm.BR;
 import com.enyata.framework.mvvm.R;
 import com.enyata.framework.mvvm.ViewModelProviderFactory;
-import com.enyata.framework.mvvm.adapters.HistoryAdapter;
-import com.enyata.framework.mvvm.adapters.HistoryList;
+import com.enyata.framework.mvvm.data.model.api.response.UserColorResponse;
+import com.enyata.framework.mvvm.data.model.api.response.UserResponse;
 import com.enyata.framework.mvvm.databinding.ActivityTransactionHistoryBinding;
-import com.enyata.framework.mvvm.databinding.ActivityWithdrawalBinding;
 import com.enyata.framework.mvvm.ui.base.BaseActivity;
 import com.enyata.framework.mvvm.ui.home.HomeActivity;
-import com.enyata.framework.mvvm.ui.withdrawal.WithdrawalActivity;
+
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -32,7 +30,9 @@ public class TransactionHistoryActivity extends BaseActivity<ActivityTransaction
 
     TextView textView;
 
-    private HistoryAdapter historyAdapter;
+    ArrayList<TransactionHistoryList> historyLists = new ArrayList<>();
+
+    ActivityTransactionHistoryBinding activityTransactionHistoryBinding;
 
     @Override
     public int getBindingVariable() {
@@ -54,29 +54,11 @@ public class TransactionHistoryActivity extends BaseActivity<ActivityTransaction
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         transactionHistoryViewModel.setNavigator(this);
+        activityTransactionHistoryBinding = getViewDataBinding();
+        listView = activityTransactionHistoryBinding.listView;
+        textView = activityTransactionHistoryBinding.text;
 
-        listView = findViewById(R.id.listView);
-        textView = findViewById(R.id.textView);
-
-        ArrayList<HistoryList> historyList = new ArrayList<>();
-
-        historyList.add(new HistoryList("Withdraw - 05712342323", "11:32, 10/10/2017", "5,455,000.00", "Completed"));
-        historyList.add(new HistoryList("Withdraw - 05712342323", "11:32, 10/10/2017", "5000.00", "Completed"));
-        historyList.add(new HistoryList("Withdraw - 05712342323", "11:32, 10/10/2017", "5000.00", "Completed"));
-        historyList.add(new HistoryList("Withdraw - 05712342323", "11:32, 10/10/2017", "5000.00", "Completed"));
-        historyList.add(new HistoryList("Withdraw - 05712342323", "11:32, 10/10/2017", "5000.00", "Completed"));
-        historyList.add(new HistoryList("Withdraw - 05712342323", "11:32, 10/10/2017", "5000.00", "Completed"));
-        historyList.add(new HistoryList("Withdraw - 05712342323", "11:32, 10/10/2017", "5000.00", "Completed"));
-        historyList.add(new HistoryList("Withdraw - 05712342323", "11:32, 10/10/2017", "5000.00", "Completed"));
-        historyList.add(new HistoryList("Withdraw - 05712342323", "11:32, 10/10/2017", "5000.00", "Completed"));
-        historyList.add(new HistoryList("Withdraw - 05712342323", "11:32, 10/10/2017", "5000.00", "Completed"));
-        historyList.add(new HistoryList("Withdraw - 05712342323", "11:32, 10/10/2017", "5000.00", "Completed"));
-        historyList.add(new HistoryList("Withdraw - 05712342323", "11:32, 10/10/2017", "5000.00", "Completed"));
-        historyList.add(new HistoryList("Withdraw - 05712342323", "11:32, 10/10/2017", "5000.00", "Completed"));
-        historyList.add(new HistoryList("Withdraw - 05712342323", "11:32, 10/10/2017", "5000.00", "Completed"));
-
-        historyAdapter = new HistoryAdapter(this, historyList);
-        listView.setAdapter(historyAdapter);
+        transactionHistoryViewModel.getUserColor();
     }
 
 
@@ -84,5 +66,26 @@ public class TransactionHistoryActivity extends BaseActivity<ActivityTransaction
     public void transactionArrow() {
         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
         startActivity(intent);
+    }
+
+
+    @Override
+    public void handleError(Throwable throwable) {
+
+    }
+
+    @Override
+    public void getUserColor(UserColorResponse userColorResponse) {
+        List<UserResponse> historyList = userColorResponse.getData();
+        for (int i = 0; i < historyList.size(); i++) {
+            UserResponse data = historyList.get(i);
+            String color = data.getColor();
+            String name = data.getName();
+            String pantonValue = data.getPantoneValue();
+            int year = data.getYear();
+            historyLists.add(new TransactionHistoryList(name, pantonValue, String.valueOf(year), color));
+            TransactionHistoryAdapter adapter = new TransactionHistoryAdapter(TransactionHistoryActivity.this, historyLists);
+            listView.setAdapter(adapter);
+        }
     }
 }

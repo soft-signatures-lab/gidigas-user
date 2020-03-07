@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/networkPlan"
             android:fontFamily="@font/lato"
-            android:text="11:32, 10/10/2017hdhdhdh"
+            android:text="11:32, 10/10/2017"
             android:paddingTop="15dp"
             android:textColor="#202F32"
             android:textSize="12sp" />
@@ -48,7 +48,7 @@
             android:layout_alignParentRight="true"
             android:fontFamily="@font/lato"
             android:textStyle="bold"
-            android:text="Completedhdhdhdghdcgh"
+            android:text="Completed"
             android:textColor="#4086F4"
             android:textSize="18sp" />
     </RelativeLayout>

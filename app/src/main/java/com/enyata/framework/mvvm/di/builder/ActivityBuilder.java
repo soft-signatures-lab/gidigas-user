@@ -57,7 +57,6 @@ public abstract class ActivityBuilder {
     @ContributesAndroidInjector
     abstract ConfirmSuccessActivity bindConfirmSuccessActivity();
 
-
     @ContributesAndroidInjector
     abstract DepositActivity bindDepositActivity();
 
@@ -75,8 +74,5 @@ public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector
     abstract TransactionHistoryActivity bindTransactionHistoryActivity();
-
-
-
 
 }

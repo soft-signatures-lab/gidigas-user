@@ -13,14 +13,13 @@ import android.widget.TextView;
 import com.enyata.framework.mvvm.BR;
 import com.enyata.framework.mvvm.R;
 import com.enyata.framework.mvvm.ViewModelProviderFactory;
+import com.enyata.framework.mvvm.data.model.api.response.UserResponse;
 import com.enyata.framework.mvvm.databinding.ActivityHomeBinding;
 import com.enyata.framework.mvvm.ui.base.BaseActivity;
 import com.enyata.framework.mvvm.ui.deposit.DepositActivity;
 import com.enyata.framework.mvvm.ui.login.LoginActivity;
-import com.enyata.framework.mvvm.ui.setPin.SetPinActivity;
 import com.enyata.framework.mvvm.ui.transactionhistory.TransactionHistoryActivity;
 import com.enyata.framework.mvvm.ui.withdrawal.WithdrawalActivity;
-import com.enyata.framework.mvvm.ui.withdrawal.WithdrawalNavigator;
 
 import javax.inject.Inject;
 
@@ -31,7 +30,7 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding, HomeViewMode
     private Button btnLogOut;
     @Override
     public int getBindingVariable() {
-        return com.enyata.framework.mvvm.BR.viewModel;
+        return BR.viewModel;
     }
 
     @Override
@@ -81,6 +80,7 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding, HomeViewMode
     public void Ondeposit() {
         Intent intent = new Intent(getApplicationContext(), DepositActivity.class);
         startActivity(intent);
+
     }
 
     @Override
@@ -94,4 +94,7 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding, HomeViewMode
         Intent intent = new Intent(getApplicationContext(), TransactionHistoryActivity.class);
         startActivity(intent);
     }
+
+
+
 }

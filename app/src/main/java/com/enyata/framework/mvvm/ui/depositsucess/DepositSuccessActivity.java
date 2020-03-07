@@ -23,7 +23,7 @@ public class DepositSuccessActivity extends BaseActivity<ActivityDepositSuccessB
 DepositSuccessViewModel depositSuccessViewModel;
     @Override
     public int getBindingVariable() {
-        return com.enyata.framework.mvvm.BR.viewModel;
+        return BR.viewModel;
     }
 
     @Override

@@ -14,17 +14,19 @@
  *  limitations under the License
  */
 
-package com.enyata.framework.mvvm.data.local.db;
+package com.enyata.framework.mvvm.data.model.api.response;
 
-import androidx.room.Database;
-import androidx.room.RoomDatabase;
-
-import com.enyata.framework.mvvm.data.model.db.Option;
-import com.enyata.framework.mvvm.data.model.db.Question;
-import com.enyata.framework.mvvm.data.model.db.User;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 
-@Database(entities = {User.class, Question.class, Option.class}, version = 2, exportSchema = false)
-public abstract class AppDatabase extends RoomDatabase {
+public final class LoginResponse {
 
+    @Expose
+    @SerializedName("token")
+    private String token;
+
+    public String getAccessToken() {
+        return token;
+    }
 }

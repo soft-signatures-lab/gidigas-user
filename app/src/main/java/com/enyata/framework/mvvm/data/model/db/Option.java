@@ -19,17 +19,15 @@ package com.enyata.framework.mvvm.data.model.db;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 @Entity(
         tableName = "options",
-        foreignKeys = @ForeignKey(
-                entity = Question.class,
-                parentColumns = "id",
-                childColumns = "question_id"
-        )
+        foreignKeys = @ForeignKey(entity = Question.class, parentColumns = "id", childColumns = "question_id"),
+        indices = {@Index("question_id")}
 )
 public class Option {
 

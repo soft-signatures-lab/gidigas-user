@@ -16,12 +16,16 @@
 
 package com.enyata.framework.mvvm.data.remote;
 
-import com.enyata.framework.mvvm.data.model.api.response.BlogResponse;
+
 import com.enyata.framework.mvvm.data.model.api.response.LoginRequest;
-import com.enyata.framework.mvvm.data.model.api.LoginResponse;
-import com.enyata.framework.mvvm.data.model.api.response.LogoutResponse;
-import com.enyata.framework.mvvm.data.model.api.response.OpenSourceResponse;
+import com.enyata.framework.mvvm.data.model.api.response.LoginResponse;
+import com.enyata.framework.mvvm.data.model.api.response.UserColorResponse;
+import com.enyata.framework.mvvm.data.model.api.response.UserResponse;
+import com.enyata.framework.mvvm.data.model.api.response.UsersRequest;
+import com.enyata.framework.mvvm.data.model.api.response.UsersResponse;
 import com.rx2androidnetworking.Rx2AndroidNetworking;
+
+import io.reactivex.Flowable;
 import io.reactivex.Single;
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -40,59 +44,36 @@ public class AppApiHelper implements ApiHelper {
         mApiHeader = apiHeader;
     }
 
+
     @Override
-    public Single<LoginResponse> doFacebookLoginApiCall(LoginRequest.FacebookLoginRequest request) {
-        return Rx2AndroidNetworking.post(ApiEndPoint.ENDPOINT_FACEBOOK_LOGIN)
-                .addHeaders(mApiHeader.getPublicApiHeader())
+    public Single<LoginResponse> login(LoginRequest request) {
+        return Rx2AndroidNetworking.post(ApiEndPoint.SUPER_AGENT_LOGIN)
                 .addBodyParameter(request)
                 .build()
                 .getObjectSingle(LoginResponse.class);
     }
 
     @Override
-    public Single<LoginResponse> doGoogleLoginApiCall(LoginRequest.GoogleLoginRequest request) {
-        return Rx2AndroidNetworking.post(ApiEndPoint.ENDPOINT_GOOGLE_LOGIN)
-                .addHeaders(mApiHeader.getPublicApiHeader())
-                .addBodyParameter(request)
+    public Single<UsersResponse> user(UsersRequest request) {
+        return Rx2AndroidNetworking.put(ApiEndPoint.SUPER_AGENT_PUT)
+                .addApplicationJsonBody(request)
                 .build()
-                .getObjectSingle(LoginResponse.class);
+                .getObjectSingle(UsersResponse.class);
     }
 
-    @Override
-    public Single<LogoutResponse> doLogoutApiCall() {
-        return Rx2AndroidNetworking.post(ApiEndPoint.ENDPOINT_LOGOUT)
-                .addHeaders(mApiHeader.getProtectedApiHeader())
-                .build()
-                .getObjectSingle(LogoutResponse.class);
-    }
 
     @Override
-    public Single<LoginResponse> doServerLoginApiCall(LoginRequest.ServerLoginRequest request) {
-        return Rx2AndroidNetworking.post(ApiEndPoint.ENDPOINT_SERVER_LOGIN)
-                .addHeaders(mApiHeader.getPublicApiHeader())
-                .addBodyParameter(request)
+    public Flowable<UserColorResponse> colors() {
+        return Rx2AndroidNetworking.get(ApiEndPoint.SUPER_AGENT_COLORS)
                 .build()
-                .getObjectSingle(LoginResponse.class);
+                .getObjectFlowable(UserColorResponse.class);
     }
+
 
     @Override
     public ApiHeader getApiHeader() {
         return mApiHeader;
     }
 
-    @Override
-    public Single<BlogResponse> getBlogApiCall() {
-        return Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_BLOG)
-                .addHeaders(mApiHeader.getProtectedApiHeader())
-                .build()
-                .getObjectSingle(BlogResponse.class);
-    }
 
-    @Override
-    public Single<OpenSourceResponse> getOpenSourceApiCall() {
-        return Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_OPEN_SOURCE)
-                .addHeaders(mApiHeader.getProtectedApiHeader())
-                .build()
-                .getObjectSingle(OpenSourceResponse.class);
-    }
 }

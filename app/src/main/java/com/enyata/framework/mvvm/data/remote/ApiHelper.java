@@ -16,11 +16,14 @@
 
 package com.enyata.framework.mvvm.data.remote;
 
-import com.enyata.framework.mvvm.data.model.api.response.BlogResponse;
 import com.enyata.framework.mvvm.data.model.api.response.LoginRequest;
-import com.enyata.framework.mvvm.data.model.api.LoginResponse;
-import com.enyata.framework.mvvm.data.model.api.response.LogoutResponse;
-import com.enyata.framework.mvvm.data.model.api.response.OpenSourceResponse;
+import com.enyata.framework.mvvm.data.model.api.response.LoginResponse;
+import com.enyata.framework.mvvm.data.model.api.response.UserColorResponse;
+import com.enyata.framework.mvvm.data.model.api.response.UserResponse;
+import com.enyata.framework.mvvm.data.model.api.response.UsersRequest;
+import com.enyata.framework.mvvm.data.model.api.response.UsersResponse;
+
+import io.reactivex.Flowable;
 import io.reactivex.Single;
 
 /**
@@ -29,18 +32,9 @@ import io.reactivex.Single;
 
 public interface ApiHelper {
 
-    Single<LoginResponse> doFacebookLoginApiCall(LoginRequest.FacebookLoginRequest request);
-
-    Single<LoginResponse> doGoogleLoginApiCall(LoginRequest.GoogleLoginRequest request);
-
-    Single<LogoutResponse> doLogoutApiCall();
-
-    Single<LoginResponse> doServerLoginApiCall(LoginRequest.ServerLoginRequest request);
-
+    Single<LoginResponse> login(LoginRequest request);
+    Single<UsersResponse> user(UsersRequest request);
+    Flowable<UserColorResponse> colors();
     ApiHeader getApiHeader();
-
-    Single<BlogResponse> getBlogApiCall();
-
-    Single<OpenSourceResponse> getOpenSourceApiCall();
 
 }

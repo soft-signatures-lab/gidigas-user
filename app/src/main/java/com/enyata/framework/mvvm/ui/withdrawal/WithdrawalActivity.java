@@ -34,7 +34,7 @@ private  WithdrawalViewModel withdrawalViewModel;
     EditText coin;
     @Override
     public int getBindingVariable() {
-        return com.enyata.framework.mvvm.BR.viewModel;
+        return BR.viewModel;
     }
 
     @Override
