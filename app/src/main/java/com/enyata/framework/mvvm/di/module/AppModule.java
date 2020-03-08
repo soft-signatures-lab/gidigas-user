@@ -114,6 +114,14 @@ public class AppModule {
         return appPreferencesHelper;
     }
 
+    @Provides
+    @Singleton
+    ApiHeader.ProtectedApiHeader provideProtectedApiHeader(@ApiInfo String apiKey,
+                                                           PreferencesHelper preferencesHelper) {
+        return new ApiHeader.ProtectedApiHeader(
+                preferencesHelper.getAccessToken());
+    }
+
 
     @Provides
     SchedulerProvider provideSchedulerProvider() {

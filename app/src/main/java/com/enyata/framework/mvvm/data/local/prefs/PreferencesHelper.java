@@ -21,5 +21,8 @@ import com.enyata.framework.mvvm.data.DataManager;
 
 public interface PreferencesHelper {
 
+    String getAccessToken();
+
+    void setAccessToken(String accessToken);
 
 }

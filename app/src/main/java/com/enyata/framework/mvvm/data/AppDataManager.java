@@ -81,6 +81,13 @@ public class AppDataManager implements DataManager {
     }
 
 
+    @Override
+    public String getAccessToken() {
+        return null;
+    }
 
+    @Override
+    public void setAccessToken(String accessToken) {
 
+    }
 }

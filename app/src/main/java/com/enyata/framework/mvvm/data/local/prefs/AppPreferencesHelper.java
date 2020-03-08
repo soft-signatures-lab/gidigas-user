@@ -37,4 +37,13 @@ public class AppPreferencesHelper implements PreferencesHelper {
     }
 
 
+    @Override
+    public String getAccessToken() {
+        return null;
+    }
+
+    @Override
+    public void setAccessToken(String accessToken) {
+
+    }
 }
