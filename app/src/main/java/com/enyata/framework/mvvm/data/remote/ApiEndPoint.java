@@ -28,9 +28,6 @@ public final class ApiEndPoint {
 
     public  static final String SUPER_AGENT_LOGIN = BuildConfig.BASE_URL + "/login";
 
-    public  static final String SUPER_AGENT_COLORS = BuildConfig.BASE_URL + "/unknown";
-    public  static final String SUPER_AGENT_PUT = BuildConfig.BASE_URL + "/users/2";
-
 
     private ApiEndPoint() {
         // This class is not publicly instantiable

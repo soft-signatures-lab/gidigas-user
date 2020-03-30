@@ -25,7 +25,6 @@ import com.enyata.framework.mvvm.R;
 import com.enyata.framework.mvvm.ViewModelProviderFactory;
 import com.enyata.framework.mvvm.databinding.ActivitySplashBinding;
 import com.enyata.framework.mvvm.ui.base.BaseActivity;
-import com.enyata.framework.mvvm.ui.login.LoginActivity;
 import com.enyata.framework.mvvm.ui.mainActivity.MainActivity;
 import javax.inject.Inject;
 
@@ -55,7 +54,7 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashVi
 
     @Override
     public void openMainActivity() {
-       Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+       Intent intent = new Intent(getApplicationContext(), MainActivity.class);
        startActivity(intent);
     }
 

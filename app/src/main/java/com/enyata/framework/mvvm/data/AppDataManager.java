@@ -64,16 +64,6 @@ public class AppDataManager implements DataManager {
         return mApiHelper.login(request);
     }
 
-    @Override
-    public Single<UsersResponse> user(UsersRequest request) {
-        return mApiHelper.user(request);
-    }
-
-
-    @Override
-    public Flowable<UserColorResponse> colors() {
-        return mApiHelper.colors();
-    }
 
     @Override
     public ApiHeader getApiHeader() {

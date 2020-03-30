@@ -54,23 +54,6 @@ public class AppApiHelper implements ApiHelper {
     }
 
     @Override
-    public Single<UsersResponse> user(UsersRequest request) {
-        return Rx2AndroidNetworking.put(ApiEndPoint.SUPER_AGENT_PUT)
-                .addApplicationJsonBody(request)
-                .build()
-                .getObjectSingle(UsersResponse.class);
-    }
-
-
-    @Override
-    public Flowable<UserColorResponse> colors() {
-        return Rx2AndroidNetworking.get(ApiEndPoint.SUPER_AGENT_COLORS)
-                .build()
-                .getObjectFlowable(UserColorResponse.class);
-    }
-
-
-    @Override
     public ApiHeader getApiHeader() {
         return mApiHeader;
     }

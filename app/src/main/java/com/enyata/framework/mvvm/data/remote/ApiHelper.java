@@ -33,8 +33,6 @@ import io.reactivex.Single;
 public interface ApiHelper {
 
     Single<LoginResponse> login(LoginRequest request);
-    Single<UsersResponse> user(UsersRequest request);
-    Flowable<UserColorResponse> colors();
     ApiHeader getApiHeader();
 
 }
