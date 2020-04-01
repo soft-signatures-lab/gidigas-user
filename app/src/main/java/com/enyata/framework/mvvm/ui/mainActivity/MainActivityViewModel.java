@@ -9,5 +9,11 @@ public class MainActivityViewModel extends BaseViewModel<MainNavigator> {
         super(dataManager, schedulerProvider);
     }
 
+    public void onLogin() {
+        getNavigator().onlogin();
+
+    }
+
+
 
 }

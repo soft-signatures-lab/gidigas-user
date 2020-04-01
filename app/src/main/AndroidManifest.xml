@@ -14,16 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.confirmationsuccess.ConfirmSuccessActivity"></activity>
-        <activity android:name=".ui.confirmationpage.ConfirmationPageActivity" />
-        <activity android:name=".ui.withdrawalpin.WithdrawalPinActivity" />
-        <activity android:name=".ui.depositsucess.DepositSuccessActivity" />
-        <activity android:name=".ui.depositpin.DepositPinActivity" />
-        <activity android:name=".ui.transactionhistory.TransactionHistoryActivity" />
-        <activity android:name=".ui.withdrawal.WithdrawalActivity" />
-        <activity android:name=".ui.deposit.DepositActivity" />
-        <activity android:name=".ui.home.HomeActivity" />
-        <activity android:name=".ui.setPin.SetPinActivity" />
+        <activity android:name=".ui.home.HomeActivity"></activity>
         <activity android:name=".ui.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +25,6 @@
         <activity
             android:name=".ui.mainActivity.MainActivity"
             android:launchMode="singleTop" />
-        <activity android:name=".ui.login.LoginActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

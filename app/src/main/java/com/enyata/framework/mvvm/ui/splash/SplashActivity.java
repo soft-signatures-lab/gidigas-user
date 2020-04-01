@@ -17,7 +17,11 @@
 package com.enyata.framework.mvvm.ui.splash;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -63,5 +67,10 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashVi
         super.onCreate(savedInstanceState);
         mSplashViewModel.setNavigator(this);
         mSplashViewModel.decideNextActivity();
+
+        TextView textView = findViewById(R.id.launchText);
+        Shader shader = new LinearGradient(200, 200,0,0,
+                Color.parseColor("#63D2EB"), Color.parseColor("#3795EB"),Shader.TileMode.CLAMP);
+        textView.getPaint().setShader(shader);
     }
 }

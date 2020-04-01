@@ -46,7 +46,8 @@
     <color name="blue_black_dark">#13171d</color>
     <color name="blue_black_light">#516179</color>
     <color name="blue_grey_light">#A5B4C8</color>
-    <color name="orange">#FFA500</color>
+    <color name="orange"> #FBB040</color>
     <color name="yellow">#fff44f</color>
     <color name="blue">#2553CF</color>
+    <color name="bluish">#3795EB</color>
 </resources>
