@@ -32,8 +32,11 @@ public class MainViewPagerAdapter extends FragmentPagerAdapter {
 
         if (position == 0){
             return MainLoginFragment.newInstance();
-        }else {
+        }else if(position == 1){
             return  MainRegisterFragment.newInstance();
+        }
+        else {
+            return MainRegister2Fragment.newInstance();
         }
     }
 

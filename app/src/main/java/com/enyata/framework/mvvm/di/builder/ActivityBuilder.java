@@ -19,9 +19,11 @@ package com.enyata.framework.mvvm.di.builder;
 
 
 import com.enyata.framework.mvvm.ui.home.HomeActivity;
+import com.enyata.framework.mvvm.ui.imageslide.ImageSlideActivity;
 import com.enyata.framework.mvvm.ui.mainActivity.MainActivity;
 
 import com.enyata.framework.mvvm.ui.splash.SplashActivity;
+import com.enyata.framework.mvvm.ui.support.SupportActivity;
 
 
 import dagger.Module;
@@ -38,6 +40,12 @@ public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector
     abstract HomeActivity bindHomeActivity();
+
+    @ContributesAndroidInjector
+    abstract SupportActivity bindSupportActivity();
+
+    @ContributesAndroidInjector
+    abstract ImageSlideActivity bindImageSlideActivity();
 
 
 }

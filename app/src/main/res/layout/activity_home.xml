@@ -13,13 +13,241 @@
 
 
     </data>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="hello"
-    android:textSize="40dp"/>
-    </LinearLayout>
+
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            tools:openDrawer="start">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:id="@+id/navigationDrawerIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/ic_menubar" />
+
+                    <TextView
+                        android:id="@+id/homeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/navigationDrawerIcon"
+                        android:fontFamily="@font/nunito_sans"
+                        android:text="Home"
+
+                        android:textColor="#298DCC"
+                        android:textSize="17sp" />
+
+                    <ImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentRight="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/home_icon"
+                      app:civ_border_color="@color/bluish"
+                        app:civ_border_width="1dp" />
+
+
+                </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/homeText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_sans"
+                        android:text="Hello Jolani!"
+                        android:layout_marginTop="15dp"
+                        android:textColor="#298DCC"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Monday  Feb - 19 "
+                    android:layout_marginTop="15dp"
+                    android:textColor="#777777"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:rowCount="2"
+                    android:columnCount="2"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="50dp">
+
+                    <Button
+                        android:id="@+id/BtnDeposit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:paddingTop="25dp"
+                        android:paddingBottom="25dp"
+                        android:fontFamily="@font/nunito_sans"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:drawableTop="@drawable/ic_order"
+                        android:text="\nOrders"
+                        android:textAllCaps="false"
+                        android:background="@drawable/bg_button"
+                        android:textColor="#fff"
+                        android:layout_gravity="fill"
+                        />
+
+                    <Button
+                        android:id="@+id/BtnWithdrawal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:paddingTop="25dp"
+                        android:paddingBottom="25dp"
+                        android:fontFamily="@font/nunito_sans"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:drawableTop="@drawable/ic_deals"
+
+                        android:text="\nDeals"
+                        android:background="@drawable/bg_button"
+                        android:textColor="#fff"
+                        android:textAllCaps="false"
+                        android:layout_gravity="fill"
+                        />
+
+                    <Button
+                        android:id="@+id/BtnTransaction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="17dp"
+                        android:fontFamily="@font/nunito_sans"
+                        android:paddingTop="35dp"
+                        android:paddingBottom="25dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:drawableTop="@drawable/ic_payment"
+                        android:text="\nPayments\nDetails"
+                        android:background="@drawable/bg_button"
+                        android:textColor="#fff"
+                        android:textSize="13sp"
+                        android:textAllCaps="false"
+                        android:layout_gravity="fill"
+                        />
+
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="17dp"
+                        android:paddingTop="35dp"
+                        android:paddingBottom="25dp"
+                        android:fontFamily="@font/nunito_sans"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:drawableTop="@drawable/ic_address"
+                        android:text="Address Book"
+                        android:background="@drawable/bg_button"
+                        android:textColor="#fff"
+                        android:textSize="13sp"
+                        android:textAllCaps="false"
+                        android:layout_gravity="fill"
+                        />
+                </GridLayout>
+
+                <LinearLayout
+                    android:onClick="@{() -> viewModel.OnHelp()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/ic_bg_black"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="7dp"
+                    android:paddingRight="20dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:srcCompat="@drawable/ic_help" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="20dp"
+                        android:lineHeight="60dp"
+                        android:fontFamily="@font/nunito_sans"
+                        android:text="Help &amp; Support"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="130dp"
+                    android:background="@drawable/color_text">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Create Order"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:gravity="center_vertical"
+                        android:fontFamily="@font/nunito_sans"
+
+                        android:textFontWeight="500"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nav_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="#f2f2f2"
+                android:fitsSystemWindows="true"
+                app:headerLayout="@layout/nav_header"
+                app:itemTextAppearance="@style/NavigationView"
+                app:itemTextColor="@color/light_dark"
+                app:menu="@menu/drawer">
+
+            </com.google.android.material.navigation.NavigationView>
+        </androidx.drawerlayout.widget.DrawerLayout>
+
 </layout>

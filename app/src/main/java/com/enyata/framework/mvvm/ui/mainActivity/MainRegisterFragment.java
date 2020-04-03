@@ -54,12 +54,13 @@ public class MainRegisterFragment extends Fragment{
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                 fragmentTransaction.replace(R.id.viewPager, new MainLoginFragment());
-                 fragmentTransaction.commit();
+                ViewPager pager = ((MainActivity) getContext()).getViewPager();
+                pager.setCurrentItem(0, true);
             }
         });
+
         return rootView;
     }
 
 }
+

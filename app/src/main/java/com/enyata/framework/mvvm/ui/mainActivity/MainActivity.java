@@ -25,11 +25,11 @@ import javax.inject.Inject;
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainActivityViewModel> implements MainNavigator {
 
     private static final String TAG = "Tabs";
-     MainViewPagerAdapter mainViewPagerAdapter;
+    MainViewPagerAdapter mainViewPagerAdapter;
     @Inject
     ViewModelProviderFactory factory;
     TabLayout tabLayout;
-   public static ViewPager viewPager;
+    public static ViewPager viewPager;
     LinearLayout linearLayout;
 
     public static Intent newIntent(Context context) {
@@ -71,19 +71,20 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainActivity
         viewPager.setAdapter(mainViewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
-
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.viewPager, new MainLoginFragment());
-        fragmentTransaction.commit();
-
     }
 
 
     @Override
     public void onlogin() {
-Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-startActivity(intent);
+        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+        startActivity(intent);
     }
+
+    @Override
+    public ViewPager getViewPager() {
+        return viewPager;
+    }
+
 
 
 }

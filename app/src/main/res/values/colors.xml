@@ -50,4 +50,5 @@
     <color name="yellow">#fff44f</color>
     <color name="blue">#2553CF</color>
     <color name="bluish">#3795EB</color>
+    <color name="light_dark">#333333</color>
 </resources>

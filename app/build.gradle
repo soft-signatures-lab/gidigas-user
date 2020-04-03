@@ -62,6 +62,7 @@ dependencies {
     implementation "androidx.vectordrawable:vectordrawable:$rootProject.vectorDrawableVersion"
     implementation "androidx.vectordrawable:vectordrawable-animated:$rootProject.animatedVectorDrawableVersion"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 
     // network
