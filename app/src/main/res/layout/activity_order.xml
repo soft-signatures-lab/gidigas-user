@@ -1,0 +1,107 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    tools:context="com.enyata.framework.mvvm.ui.order.OrderActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.enyata.framework.mvvm.ui.order.OrderViewModel" />
+
+
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                app:srcCompat="@drawable/ic_arrow2" />
+
+            <TextView
+                android:id="@+id/homeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/arrow"
+                android:fontFamily="@font/nunito_sans"
+                android:text="Orders"
+                android:textFontWeight="600"
+                android:textColor="#298DCC"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/home_icon"
+                app:civ_border_color="@color/bluish"
+                app:civ_border_width="1dp" />
+
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_gravity="center_vertical"
+            >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View and track your current and past orders"
+            android:textColor="#4F4F4F"
+            android:fontFamily="@font/nunito_sans"
+            android:textStyle="normal"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:textFontWeight="100"
+            />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+
+                >
+                <Button
+                    android:id="@+id/btnActive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Active"
+                    android:textColor="@color/white"
+                    android:textFontWeight="500"
+                    android:background="@drawable/ic_btn"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="History"
+                   android:layout_alignParentRight="true"
+                    android:textColor="@color/gray"
+                    android:textFontWeight="500"
+                    android:background="@drawable/btn_history"/>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

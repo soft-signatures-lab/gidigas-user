@@ -1,16 +1,17 @@
 package com.enyata.framework.mvvm.ui.support;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.os.Bundle;
 
-import com.enyata.framework.mvvm.BR;
+
 import com.enyata.framework.mvvm.R;
 import com.enyata.framework.mvvm.ViewModelProviderFactory;
 import com.enyata.framework.mvvm.databinding.ActivitySupportBinding;
 import com.enyata.framework.mvvm.ui.base.BaseActivity;
-import com.enyata.framework.mvvm.ui.base.BaseViewModel;
+import com.enyata.framework.mvvm.ui.home.HomeActivity;
+import com.enyata.framework.mvvm.ui.home.HomeViewModel;
 
 import javax.inject.Inject;
 
@@ -40,5 +41,11 @@ SupportViewModel supportViewModel;
         super.onCreate(savedInstanceState);
         activitySupportBinding = getViewDataBinding();
 
+    }
+
+    @Override
+    public void arrowClick() {
+        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+        startActivity(intent);
     }
 }

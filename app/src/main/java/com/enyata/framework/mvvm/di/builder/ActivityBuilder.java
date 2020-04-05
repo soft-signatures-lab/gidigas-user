@@ -22,6 +22,8 @@ import com.enyata.framework.mvvm.ui.home.HomeActivity;
 import com.enyata.framework.mvvm.ui.imageslide.ImageSlideActivity;
 import com.enyata.framework.mvvm.ui.mainActivity.MainActivity;
 
+import com.enyata.framework.mvvm.ui.map.MapsActivity;
+import com.enyata.framework.mvvm.ui.order.OrderActivity;
 import com.enyata.framework.mvvm.ui.splash.SplashActivity;
 import com.enyata.framework.mvvm.ui.support.SupportActivity;
 
@@ -47,5 +49,10 @@ public abstract class ActivityBuilder {
     @ContributesAndroidInjector
     abstract ImageSlideActivity bindImageSlideActivity();
 
+    @ContributesAndroidInjector
+    abstract OrderActivity bindOrderActivity();
+
+    @ContributesAndroidInjector
+    abstract MapsActivity bindMapsActivity();
 
 }

@@ -8,4 +8,8 @@ public class ImageSlideViewModel extends BaseViewModel<ImageSlideNavigator> {
     public ImageSlideViewModel(DataManager dataManager, SchedulerProvider schedulerProvider) {
         super(dataManager,schedulerProvider);
     }
+
+    public void onSkip(){
+        getNavigator().onskip();
+    }
 }

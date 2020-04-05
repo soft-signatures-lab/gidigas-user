@@ -12,4 +12,8 @@ public class HomeViewModel extends BaseViewModel<HomeNavigator> {
         getNavigator().onhelp();
     }
 
+    public void onOrder(){
+        getNavigator().onorder();
+    }
+
 }
