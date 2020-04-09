@@ -11,4 +11,10 @@ public class MapViewModel extends BaseViewModel<MapNavigator> {
     public  void OnNext(){
         getNavigator().btnNext();
     }
+    public void CreateArrow(){
+        getNavigator().arrowCreate();
+    }
+//    public  void OnSearch(){
+//
+//    }
 }

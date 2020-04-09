@@ -30,6 +30,15 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
 
+    <string-array name="array_name">
+        <item>Yaba</item>
+        <item>Surulere</item>
+        <item>Lekki</item>
+        <item>Oshodi</item>
+        <item>Victoria Island</item>
+    </string-array>
+
+
     <!--Login Validation-->
     <string name="invalid_email_password">Please provide a valid email and password.</string>
 

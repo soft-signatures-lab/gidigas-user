@@ -29,6 +29,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainActivity
     @Inject
     ViewModelProviderFactory factory;
     TabLayout tabLayout;
+    ActivityMainBinding activityMainBinding;
     public static ViewPager viewPager;
     LinearLayout linearLayout;
 
@@ -57,6 +58,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        activityMainBinding = getViewDataBinding();
         mainActivityViewModel.setNavigator(this);
 
         mainViewPagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager());
@@ -70,6 +72,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainActivity
         mainViewPagerAdapter.addFragment(new MainRegisterFragment(), "Register");
         viewPager.setAdapter(mainViewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
+
 
     }
 

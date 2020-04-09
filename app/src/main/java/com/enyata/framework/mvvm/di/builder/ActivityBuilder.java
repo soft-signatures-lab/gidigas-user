@@ -18,12 +18,17 @@ package com.enyata.framework.mvvm.di.builder;
 
 
 
+import com.enyata.framework.mvvm.ui.addaddress.AddAddressActivity;
+import com.enyata.framework.mvvm.ui.addcard.AddCardActivity;
+import com.enyata.framework.mvvm.ui.address.AddressActivity;
 import com.enyata.framework.mvvm.ui.home.HomeActivity;
 import com.enyata.framework.mvvm.ui.imageslide.ImageSlideActivity;
 import com.enyata.framework.mvvm.ui.mainActivity.MainActivity;
 
 import com.enyata.framework.mvvm.ui.map.MapsActivity;
 import com.enyata.framework.mvvm.ui.order.OrderActivity;
+import com.enyata.framework.mvvm.ui.orderinfo.OrderInfoActivity;
+import com.enyata.framework.mvvm.ui.payment.PaymentActivity;
 import com.enyata.framework.mvvm.ui.splash.SplashActivity;
 import com.enyata.framework.mvvm.ui.support.SupportActivity;
 
@@ -54,5 +59,22 @@ public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector
     abstract MapsActivity bindMapsActivity();
+
+    @ContributesAndroidInjector
+    abstract AddressActivity bindAddressActivity();
+
+    @ContributesAndroidInjector
+    abstract PaymentActivity bindPaymentActivity();
+
+    @ContributesAndroidInjector
+    abstract AddCardActivity bindAddCardActivity();
+
+    @ContributesAndroidInjector
+    abstract AddAddressActivity bindAddAddressActivity();
+
+    @ContributesAndroidInjector
+    abstract OrderInfoActivity bindOrderInfoActivity();
+
+
 
 }

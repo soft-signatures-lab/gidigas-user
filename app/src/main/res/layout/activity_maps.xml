@@ -20,12 +20,53 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-<fragment
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
-    android:layout_width="match_parent"
-    android:layout_height="580dp"
-    />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp">
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="22dp"
+                android:onClick="@{()->viewModel.CreateArrow()}"
+                app:srcCompat="@drawable/ic_arrow2" />
+
+            <TextView
+                android:id="@+id/homeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/arrow"
+                android:fontFamily="@font/nunito_sans"
+                android:text="Create Orders"
+                android:textColor="#298DCC"
+                android:textFontWeight="600"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="7dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/home_icon"
+                app:civ_border_color="@color/bluish"
+                app:civ_border_width="1dp" />
+
+
+        </RelativeLayout>
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="530dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,55 +78,74 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
                     android:text="Where do you want your gas delivered?"
                     android:textColor="@color/bluish"
                     android:textFontWeight="700"
-                    android:textSize="14sp"
-                    />
-
-                <EditText
-                    android:id="@+id/editMobileNo"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_margin="5dp"
-                    android:paddingLeft="10dp"
-                    android:background="@drawable/search_bg"
-                    android:hint="Search address, street, zip codes"
-                    android:drawableRight="@drawable/ic_search"
-                    >
-                </EditText>
+                    android:textSize="14sp" />
 
                 <RelativeLayout
-                    android:onClick="@{()->viewModel.OnNext()}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/searchLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/search_bg"
+                        android:hint="Search address, street, zip codes"
+                        android:onClick="onClick"
+                        android:paddingLeft="10dp"
+
+                        />
+
+                    <ImageView
+                        android:id="@+id/search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="20dp"
+                        android:onClick="onClick"
+
+                        app:srcCompat="@drawable/ic_search" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
                     android:id="@+id/nextBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
                     android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_button"
+                    android:onClick="@{()->viewModel.OnNext()}"
+                    android:padding="10dp">
 
-                    android:background="@drawable/bg_button">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Next"
                         android:layout_marginLeft="20dp"
-                        android:textColor="@color/white"
                         android:fontFamily="@font/nunito_sans"
-                        android:textSize="16sp"
-                        android:textFontWeight="600"/>
+                        android:text="Next"
+                        android:textColor="@color/white"
+                        android:textFontWeight="600"
+                        android:textSize="16sp" />
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="20dp"
+                        android:layout_alignParentRight="true"
                         android:layout_marginTop="5dp"
-                        app:srcCompat="@drawable/ic_side_navbar"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_marginRight="20dp"
+                        app:srcCompat="@drawable/ic_side_navbar" />
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>

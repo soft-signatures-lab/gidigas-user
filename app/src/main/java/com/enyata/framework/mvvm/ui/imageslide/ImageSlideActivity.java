@@ -72,7 +72,7 @@ ImageSlideViewModel imageSlideViewModel;
 
             @Override
             public void onPageSelected(int position) {
-
+                createDots(position);
 
             }
 

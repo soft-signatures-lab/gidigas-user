@@ -27,7 +27,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="90dp"
+                android:layout_marginTop="110dp"
                 android:background="@drawable/ic_img_bg"
                 android:orientation="vertical">
 
@@ -50,6 +50,10 @@
                     android:text="Have your gas delivered \nsafely in 30mins by our \nreliable dispatch riders"
                     android:textAlignment="center"
                     android:textSize="16sp" />
+
+                <include layout="@layout/image_slider"
+                    />
+
             </LinearLayout>
         </LinearLayout>
 

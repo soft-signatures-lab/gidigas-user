@@ -30,15 +30,13 @@ public class MainViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
 
-        if (position == 0){
+        if (position == 0) {
             return MainLoginFragment.newInstance();
-        }else if(position == 1){
-            return  MainRegisterFragment.newInstance();
-        }
-        else {
-            return MainRegister2Fragment.newInstance();
+        } else  {
+            return MainRegisterFragment.newInstance();
         }
     }
+
 
     @Override
     public int getCount() {

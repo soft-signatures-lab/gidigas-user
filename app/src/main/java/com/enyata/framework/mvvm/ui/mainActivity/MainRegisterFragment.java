@@ -18,15 +18,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.enyata.framework.mvvm.R;
 
 
-public class MainRegisterFragment extends Fragment{
+public class MainRegisterFragment extends Fragment {
     MainActivityViewModel mainActivityViewModel;
     Button button;
+    Button navLogin;
     ViewPager viewPager;
+    ImageView imageView;
+    LinearLayout linearLayout;
+    LinearLayout register;
 
 
     public MainRegisterFragment() {
@@ -34,7 +41,7 @@ public class MainRegisterFragment extends Fragment{
     }
 
     public static MainRegisterFragment newInstance() {
-       return new MainRegisterFragment();
+        return new MainRegisterFragment();
 
     }
 
@@ -51,12 +58,25 @@ public class MainRegisterFragment extends Fragment{
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_main_register, container, false);
         button = rootView.findViewById(R.id.BtnNext);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ViewPager pager = ((MainActivity) getContext()).getViewPager();
-                pager.setCurrentItem(0, true);
-            }
+        imageView = rootView.findViewById(R.id.backRegister1);
+        linearLayout = rootView.findViewById(R.id.register2);
+        register = rootView.findViewById(R.id.container);
+
+        button.setOnClickListener(view -> {
+            linearLayout.setVisibility(View.VISIBLE);
+            register.setVisibility(View.GONE);
+
+        });
+
+        imageView.setOnClickListener(view -> {
+            register.setVisibility(View.VISIBLE);
+            linearLayout.setVisibility(View.GONE);
+        });
+
+        navLogin = rootView.findViewById(R.id.BtnLogin);
+        navLogin.setOnClickListener(view -> {
+            ViewPager pager = ((MainActivity) getContext()).getViewPager();
+            pager.setCurrentItem(0, true);
         });
 
         return rootView;

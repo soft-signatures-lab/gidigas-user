@@ -16,7 +16,7 @@
                 <item android:offset="0" android:color="#FFFFFF"/>
                 <item android:offset="1" android:color="#FFFFFF"/>
             </gradient>
-            <stroke android:width="2dp" android:color="#828282" />
+
         </aapt:attr>
     </path>
 </vector>

@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,6 +15,8 @@ import com.enyata.framework.mvvm.R;
 import com.enyata.framework.mvvm.ViewModelProviderFactory;
 import com.enyata.framework.mvvm.databinding.ActivityOrderBinding;
 import com.enyata.framework.mvvm.ui.base.BaseActivity;
+import com.enyata.framework.mvvm.ui.home.HomeActivity;
+import com.enyata.framework.mvvm.ui.support.SupportActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -52,5 +55,11 @@ public class OrderActivity extends BaseActivity<ActivityOrderBinding, OrderViewM
         activityOrderBinding = getViewDataBinding();
         orderViewModel.setNavigator(this);
 
+    }
+
+    @Override
+    public void backArrowOrder() {
+        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+        startActivity(intent);
     }
 }

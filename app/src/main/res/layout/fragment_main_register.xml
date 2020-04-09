@@ -22,13 +22,14 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/container"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
@@ -47,6 +48,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nunito_sans"
                         android:text="First name"
+                        android:textColor="@color/bluish"
+                        android:textFontWeight="500"
                         android:textSize="14sp" />
 
                     <RelativeLayout
@@ -88,6 +91,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nunito_sans"
                         android:text="Surname"
+                        android:textColor="@color/bluish"
+                        android:textFontWeight="500"
                         android:textSize="14sp" />
 
                     <RelativeLayout
@@ -129,6 +134,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nunito_sans"
                         android:text="Mobile Number"
+                        android:textColor="@color/bluish"
+                        android:textFontWeight="500"
                         android:textSize="14sp" />
 
                     <RelativeLayout
@@ -168,6 +175,224 @@
                     android:background="@drawable/bg_button"
                     android:fontFamily="@font/nunito_sans"
                     android:text="Next"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/register2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_sans"
+                        android:text="Email"
+                        android:textColor="@color/bluish"
+                        android:textFontWeight="500"
+                        android:textSize="14sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:srcCompat="@drawable/ic_mailicon" />
+
+                        <EditText
+                            android:id="@+id/emailReg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="35dp"
+                            android:drawablePadding="20dp"
+                            android:fontFamily="@font/nunito_sans_italic"
+                            android:hint="type your username here"
+                            android:inputType="textEmailAddress"
+                            android:paddingBottom="20dp"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_sans"
+                        android:text="Password"
+                        android:textColor="@color/bluish"
+                        android:textFontWeight="500"
+                        android:textSize="14sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="23dp"
+                            app:srcCompat="@drawable/ic_padlockicon" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:passwordToggleEnabled="true">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/password"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginTop="10dp"
+                                android:drawablePadding="20dp"
+                                android:fontFamily="@font/nunito_sans_italic"
+                                android:hint="type your password here"
+                                android:inputType="textPassword"
+                                android:paddingBottom="20dp"
+                                android:textSize="12sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_sans"
+                        android:text="Confirm Password"
+                        android:textColor="@color/bluish"
+                        android:textFontWeight="500"
+                        android:textSize="14sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="23dp"
+                            app:srcCompat="@drawable/ic_padlockicon" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:passwordToggleEnabled="true">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/Confirmpassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginTop="10dp"
+                                android:drawablePadding="20dp"
+                                android:fontFamily="@font/nunito_sans_italic"
+                                android:hint="type your password here"
+                                android:inputType="textPassword"
+                                android:paddingBottom="20dp"
+                                android:textSize="12sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_sans"
+                        android:text="Referral (optional)"
+                        android:textColor="@color/bluish"
+                        android:textFontWeight="500"
+                        android:textSize="14sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:srcCompat="@drawable/ic_register" />
+
+                        <EditText
+                            android:id="@+id/referral"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="35dp"
+                            android:drawablePadding="20dp"
+                            android:fontFamily="@font/nunito_sans_italic"
+                            android:hint="type a referral code here"
+                            android:inputType="number"
+                            android:paddingBottom="20dp"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/backRegister1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/ic_back_reg" />
+
+                <Button
+                    android:id="@+id/BtnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_button"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Done"
                     android:textAllCaps="false"
                     android:textColor="#fff"
                     android:textSize="18sp" />

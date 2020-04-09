@@ -103,7 +103,8 @@
                     android:layout_marginTop="50dp">
 
                     <Button
-                        android:id="@+id/BtnDeposit"
+                        android:onClick="@{()->viewModel.OnOrder()}"
+                        android:id="@+id/BtnOrder"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
@@ -121,7 +122,7 @@
                         />
 
                     <Button
-                        android:id="@+id/BtnWithdrawal"
+                        android:id="@+id/BtnDeals"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -140,7 +141,8 @@
                         />
 
                     <Button
-                        android:id="@+id/BtnTransaction"
+                        android:id="@+id/BtnPayment"
+                        android:onClick="@{()->viewModel.OnPayment()}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
@@ -161,6 +163,7 @@
 
 
                     <Button
+                        android:onClick="@{()->viewModel.OnAddress()}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -215,7 +218,7 @@
             </LinearLayout>
                 <LinearLayout
                     android:id="@+id/order"
-                    android:onClick="@{()->viewModel.onOrder()}"
+                    android:onClick="@{()->viewModel.onCreateOrder()}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="130dp"

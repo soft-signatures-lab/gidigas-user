@@ -19,10 +19,12 @@ import com.enyata.framework.mvvm.BR;
 import com.enyata.framework.mvvm.R;
 import com.enyata.framework.mvvm.ViewModelProviderFactory;
 import com.enyata.framework.mvvm.databinding.ActivityHomeBinding;
+import com.enyata.framework.mvvm.ui.address.AddressActivity;
 import com.enyata.framework.mvvm.ui.base.BaseActivity;
 import com.enyata.framework.mvvm.ui.mainActivity.MainActivity;
 import com.enyata.framework.mvvm.ui.map.MapsActivity;
 import com.enyata.framework.mvvm.ui.order.OrderActivity;
+import com.enyata.framework.mvvm.ui.payment.PaymentActivity;
 import com.enyata.framework.mvvm.ui.support.SupportActivity;
 import com.google.android.material.navigation.NavigationView;
 
@@ -81,8 +83,26 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding,HomeViewModel
     }
 
     @Override
-    public void onorder() {
+    public void onCreateorder() {
         Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onorder() {
+        Intent intent = new Intent(getApplicationContext(), OrderActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onaddress() {
+        Intent intent = new Intent(getApplicationContext(), AddressActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onpayment() {
+        Intent intent = new Intent(getApplicationContext(), PaymentActivity.class);
         startActivity(intent);
     }
 

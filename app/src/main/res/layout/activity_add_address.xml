@@ -1,0 +1,205 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.enyata.framework.mvvm.ui.addaddress.AddAddressActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.enyata.framework.mvvm.ui.addaddress.AddAddressViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:onClick="@{()->viewModel.OnBackAddress()}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="22dp"
+                app:srcCompat="@drawable/ic_arrow2" />
+
+            <TextView
+                android:id="@+id/homeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/arrow"
+                android:fontFamily="@font/nunito_sans"
+                android:text="Add Address"
+                android:textFontWeight="600"
+                android:textColor="#298DCC"
+                android:textSize="18sp" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="45dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address Details"
+                android:textFontWeight="600"
+                android:fontFamily="@font/nunito_sans"
+                android:textColor="#298DCC"
+                android:textSize="17sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="#E1E1E1" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select your area"
+                    android:textFontWeight="300"
+                    android:fontFamily="@font/nunito_sans"
+                    android:textColor="#298DCC"
+                    android:textSize="14sp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <Spinner
+                        android:id="@+id/Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:entries="@array/array_name"
+                        android:background="@drawable/spinner_bg"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="2dp"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="25dp"
+                        app:srcCompat="@drawable/ic_spinner"/>
+
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address"
+                    android:textFontWeight="300"
+
+                    android:fontFamily="@font/nunito_sans"
+                    android:textColor="#298DCC"
+                    android:textSize="14sp"/>
+
+                <EditText
+                    android:id="@+id/datatext1"
+                    android:hint="No 7 , bass crecent Herbert Marculey \nGRA"
+                    android:layout_width="match_parent"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="14sp"
+                    android:textColorHint="#6D6D6D"
+                    android:layout_height="70dp"
+                    android:background="@drawable/spinner_bg"
+                    android:inputType="text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Additional information (Optional)"
+                    android:textFontWeight="300"
+                    android:fontFamily="@font/nunito_sans"
+                    android:textColor="#298DCC"
+                    android:textSize="14sp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="25dp"
+                    android:textSize="14sp"
+                    android:textColorHint="#6D6D6D"
+                    android:hint="provide additional info on delivery \n instructions or just heads up"
+                    android:background="@drawable/spinner_bg"
+                    android:inputType="text" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="100dp"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/address_bg"
+                android:text="Save Address"
+                android:paddingLeft="60dp"
+                android:textSize="18dp"
+                android:paddingRight="60dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/nunito_sans"
+                android:textFontWeight="600"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="55dp"
+                android:paddingRight="55dp"
+                android:textSize="18dp"
+                android:background="@drawable/delete_bg"
+                android:text="Delete Address"
+                android:textColor="#EA4335"
+                android:textFontWeight="600"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:fontFamily="@font/nunito_sans"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

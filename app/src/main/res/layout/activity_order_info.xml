@@ -1,0 +1,247 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.enyata.framework.mvvm.ui.orderinfo.OrderInfoActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.enyata.framework.mvvm.ui.orderinfo.OrderInfoViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:onClick="@{()->viewModel.OnOrderArrow()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="22dp"
+            app:srcCompat="@drawable/ic_arrow2" />
+
+        <TextView
+            android:id="@+id/homeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/arrow"
+            android:fontFamily="@font/nunito_sans"
+            android:text="Create Orders"
+            android:textFontWeight="600"
+            android:textColor="#298DCC"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/home_icon"
+            app:civ_border_color="@color/bluish"
+            app:civ_border_width="1dp" />
+
+
+    </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_button"
+            android:onClick="@{()->viewModel.OnNext()}"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/nunito_sans"
+                android:text="Location"
+                android:textColor="@color/white"
+                android:textFontWeight="600"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                app:srcCompat="@drawable/ic_side_navbar" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:text="Yaba Road 12, Sounders street, Yaba."
+            android:textColor="@color/bluish"
+            android:textFontWeight="700"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_button"
+            android:onClick="@{()->viewModel.OnNext()}"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/nunito_sans"
+                android:text="Vendor"
+                android:textColor="@color/white"
+                android:textFontWeight="600"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                app:srcCompat="@drawable/ic_side_navbar" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+             android:layout_marginLeft="20dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/orderImage"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/home_icon"
+                android:scaleType="centerCrop"
+                app:civ_border_width="1dp"
+                app:civ_border_color="#FF000000"/>
+
+            <TextView
+                android:id="@+id/orderText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/orderImage"
+                android:layout_marginLeft="13dp"
+                android:fontFamily="@font/nunito_sans"
+                android:text="AP Energy"
+                android:textFontWeight="300"
+                android:textColor="#298DCC"
+                android:textSize="18sp" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="120dp"
+                android:text="4.4/5"
+                android:textColor="#6D6D6D"
+                android:textSize="14sp"
+                android:fontFamily="@font/nunito_sans"/>
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:text="N80/kg"
+                android:textColor="#6D6D6D"
+                android:textSize="14sp"
+                android:fontFamily="@font/nunito_sans"/>
+
+
+        </RelativeLayout>
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_button"
+            android:onClick="@{()->viewModel.OnNext()}"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/nunito_sans"
+                android:text="Cylinder Size"
+                android:textColor="@color/white"
+                android:textFontWeight="600"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                app:srcCompat="@drawable/ic_side_navbar" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/spinner_bg"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="6dp"
+                android:background="#E1E1E1" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:textAlignment="viewEnd"
+                android:text="Add Cylinder"
+                android:layout_marginRight="50dp"
+                android:gravity="end" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/ic_add"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

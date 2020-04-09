@@ -6,12 +6,18 @@ import androidx.lifecycle.ViewModelProvider;
 import com.enyata.framework.mvvm.data.DataManager;
 
 
+import com.enyata.framework.mvvm.ui.addaddress.AddAddressViewModel;
+import com.enyata.framework.mvvm.ui.addcard.AddcardViewModel;
+import com.enyata.framework.mvvm.ui.address.AddressActivity;
+import com.enyata.framework.mvvm.ui.address.AddressViewModel;
 import com.enyata.framework.mvvm.ui.home.HomeViewModel;
 import com.enyata.framework.mvvm.ui.imageslide.ImageSlideViewModel;
 import com.enyata.framework.mvvm.ui.mainActivity.MainActivityViewModel;
 import com.enyata.framework.mvvm.ui.map.MapViewModel;
 import com.enyata.framework.mvvm.ui.map.MapsActivity;
 import com.enyata.framework.mvvm.ui.order.OrderViewModel;
+import com.enyata.framework.mvvm.ui.orderinfo.OrderInfoViewModel;
+import com.enyata.framework.mvvm.ui.payment.PaymentViewModel;
 import com.enyata.framework.mvvm.ui.splash.SplashViewModel;
 import com.enyata.framework.mvvm.ui.support.SupportViewModel;
 import com.enyata.framework.mvvm.utils.rx.SchedulerProvider;
@@ -56,7 +62,23 @@ public class ViewModelProviderFactory extends ViewModelProvider.NewInstanceFacto
         }else if (modelClass.isAssignableFrom(MapViewModel.class)) {
             //noinspection unchecked
             return (T) new MapViewModel(dataManager, schedulerProvider);
+        }else if (modelClass.isAssignableFrom(AddressViewModel.class)) {
+            //noinspection unchecked
+            return (T) new AddressViewModel(dataManager, schedulerProvider);
+        }else if (modelClass.isAssignableFrom(PaymentViewModel.class)) {
+            //noinspection unchecked
+            return (T) new PaymentViewModel(dataManager, schedulerProvider);
+        }else if (modelClass.isAssignableFrom(AddcardViewModel.class)) {
+            //noinspection unchecked
+            return (T) new AddcardViewModel(dataManager, schedulerProvider);
+        }else if (modelClass.isAssignableFrom(AddAddressViewModel.class)) {
+            //noinspection unchecked
+            return (T) new AddAddressViewModel(dataManager, schedulerProvider);
+        }else if (modelClass.isAssignableFrom(OrderViewModel.class)) {
+            //noinspection unchecked
+            return (T) new OrderInfoViewModel(dataManager, schedulerProvider);
         }
+
 
         throw new IllegalArgumentException("Unknown ViewModel class: " + modelClass.getName());
     }

@@ -9,5 +9,7 @@ public class OrderViewModel extends BaseViewModel<OrderNavigator> {
         super(dataManager,schedulerProvider);
     }
 
-
+public  void OnOrderArrow(){
+        getNavigator().backArrowOrder();
+}
 }

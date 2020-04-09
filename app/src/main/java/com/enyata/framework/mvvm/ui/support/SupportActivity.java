@@ -40,6 +40,7 @@ SupportViewModel supportViewModel;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activitySupportBinding = getViewDataBinding();
+        supportViewModel.setNavigator(this);
 
     }
 
