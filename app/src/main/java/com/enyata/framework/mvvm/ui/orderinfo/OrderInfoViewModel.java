@@ -8,4 +8,7 @@ public class OrderInfoViewModel extends BaseViewModel<OrderInfoNavigator> {
     public OrderInfoViewModel(DataManager dataManager, SchedulerProvider schedulerProvider) {
         super(dataManager, schedulerProvider);
     }
+    public void OnCart(){
+        getNavigator().cart();
+    }
 }

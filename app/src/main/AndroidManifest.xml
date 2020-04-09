@@ -25,7 +25,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.orderinfo.OrderInfoActivity"></activity>
+        <activity android:name=".ui.cart.CartActivity"></activity>
+        <activity android:name=".ui.orderinfo.OrderInfoActivity" />
         <activity android:name=".ui.addaddress.AddAddressActivity" />
         <activity android:name=".ui.addcard.AddCardActivity" />
         <activity android:name=".ui.payment.PaymentActivity" />

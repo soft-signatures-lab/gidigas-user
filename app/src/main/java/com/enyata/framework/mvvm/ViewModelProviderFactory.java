@@ -10,6 +10,7 @@ import com.enyata.framework.mvvm.ui.addaddress.AddAddressViewModel;
 import com.enyata.framework.mvvm.ui.addcard.AddcardViewModel;
 import com.enyata.framework.mvvm.ui.address.AddressActivity;
 import com.enyata.framework.mvvm.ui.address.AddressViewModel;
+import com.enyata.framework.mvvm.ui.cart.CartViewModel;
 import com.enyata.framework.mvvm.ui.home.HomeViewModel;
 import com.enyata.framework.mvvm.ui.imageslide.ImageSlideViewModel;
 import com.enyata.framework.mvvm.ui.mainActivity.MainActivityViewModel;
@@ -74,9 +75,12 @@ public class ViewModelProviderFactory extends ViewModelProvider.NewInstanceFacto
         }else if (modelClass.isAssignableFrom(AddAddressViewModel.class)) {
             //noinspection unchecked
             return (T) new AddAddressViewModel(dataManager, schedulerProvider);
-        }else if (modelClass.isAssignableFrom(OrderViewModel.class)) {
+        }else if (modelClass.isAssignableFrom(OrderInfoViewModel.class)) {
             //noinspection unchecked
             return (T) new OrderInfoViewModel(dataManager, schedulerProvider);
+        }else if (modelClass.isAssignableFrom(CartViewModel.class)) {
+            //noinspection unchecked
+            return (T) new CartViewModel(dataManager, schedulerProvider);
         }
 
 

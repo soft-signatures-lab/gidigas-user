@@ -25,6 +25,7 @@ import com.enyata.framework.mvvm.ViewModelProviderFactory;
 import com.enyata.framework.mvvm.databinding.ActivityMapsBinding;
 import com.enyata.framework.mvvm.ui.base.BaseActivity;
 import com.enyata.framework.mvvm.ui.home.HomeActivity;
+import com.enyata.framework.mvvm.ui.orderinfo.OrderInfoActivity;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -102,7 +103,8 @@ public class MapsActivity extends BaseActivity<ActivityMapsBinding, MapViewModel
 
     @Override
     public void btnNext() {
-
+        Intent intent = new Intent(getApplicationContext(), OrderInfoActivity.class);
+        startActivity(intent);
     }
 
     @Override
