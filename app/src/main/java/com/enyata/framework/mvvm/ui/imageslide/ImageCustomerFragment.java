@@ -48,9 +48,9 @@ LinearLayout linearLayout;
 //                    context.startActivity(intent);
 //                });
 
-        Intent intent = new Intent(getActivity(), MainActivity.class);
-        linearLayout = view.findViewById(R.id.getStarted);
-        linearLayout.setOnClickListener(v -> startActivity(intent));
+//        Intent intent = new Intent(getActivity(), MainActivity.class);
+//        linearLayout = view.findViewById(R.id.getStarted);
+//        linearLayout.setOnClickListener(v -> startActivity(intent));
 
 
         return view;

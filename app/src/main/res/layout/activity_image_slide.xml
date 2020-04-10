@@ -38,15 +38,21 @@
 
 
 
+
                <androidx.viewpager.widget.ViewPager
                    android:id="@+id/viewpager"
                    android:layout_marginTop="50dp"
                    android:layout_width="match_parent"
-                   android:layout_height="match_parent"
+                   android:layout_height="500dp"
                    />
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="vertical"
+               android:background="#F9F9F9">
                <LinearLayout
                    android:id="@+id/dotsLayout"
-                   android:layout_marginTop="19dp"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:gravity="center"
@@ -54,7 +60,29 @@
 
                </LinearLayout>
 
+           <LinearLayout
+               android:id="@+id/getStarted"
+               android:visibility="gone"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="60dp"
+               android:background="@drawable/color_text">
 
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="50dp"
+                   android:fontFamily="@font/nunito_sans"
+                   android:gravity="center_vertical"
+                   android:text="Get Started"
+                   android:textAlignment="center"
+                   android:textColor="@color/white"
+
+                   android:textFontWeight="500"
+                   android:textSize="20sp" />
+
+
+           </LinearLayout>
+           </LinearLayout>
 
        </LinearLayout>
 

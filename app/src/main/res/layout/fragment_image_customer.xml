@@ -19,7 +19,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="200dp"
             android:layout_marginTop="65dp"
             android:background="@drawable/ic_img_bg"
             android:orientation="vertical">
@@ -44,31 +44,9 @@
                 android:textAlignment="center"
                 android:textSize="16sp" />
 
-            <include layout="@layout/image_slider"
-                />
 
 
-            <LinearLayout
-                android:id="@+id/getStarted"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
-                android:background="@drawable/color_text">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:fontFamily="@font/nunito_sans"
-                    android:gravity="center_vertical"
-                    android:text="Get Started"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-
-                    android:textFontWeight="500"
-                    android:textSize="20sp" />
-
-
-            </LinearLayout>
 
         </LinearLayout>
 

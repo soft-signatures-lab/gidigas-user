@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -28,7 +29,7 @@ ImageSlideViewModel imageSlideViewModel;
     ImageView[] dots;
     ImageAdapter imageAdapter;
     ViewPager viewPager;
-    int previousPosition = 0;
+    LinearLayout linearLayout;
     private int[] layouts = {R.layout.fragment_image_stress, R.layout.fragment_image_fast, R.layout.fragment_image_affordable,R.layout.fragment_image_customer};
 
     @Override
@@ -52,12 +53,20 @@ ImageSlideViewModel imageSlideViewModel;
         super.onCreate(savedInstanceState);
         activityImageSlideBinding = getViewDataBinding();
         imageSlideViewModel.setNavigator(this);
+        linearLayout = activityImageSlideBinding.getStarted;
+
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
         dotLayouts = findViewById(R.id.dotsLayout);
         viewPager = findViewById(R.id.viewpager);
-//        imageAdapter = new ImageAdapter(layouts, ImageSlideActivity.this);
         imageAdapter = new ImageAdapter(this,getSupportFragmentManager());
         viewPager.setAdapter(imageAdapter);
         viewPager.setOffscreenPageLimit(4);
@@ -67,6 +76,11 @@ ImageSlideViewModel imageSlideViewModel;
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                if(position == 3){
+                    linearLayout.setVisibility(View.VISIBLE);
+                }else {
+                    linearLayout.setVisibility(View.GONE);
+                }
 
             }
 

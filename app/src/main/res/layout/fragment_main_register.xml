@@ -70,7 +70,7 @@
                             android:layout_marginLeft="35dp"
                             android:drawablePadding="20dp"
                             android:fontFamily="@font/nunito_sans_italic"
-                            android:hint="type your first name here"
+                            android:hint="Type your first name here"
                             android:inputType="text"
                             android:paddingBottom="20dp"
                             android:textSize="12sp" />
@@ -113,7 +113,7 @@
                             android:layout_marginLeft="35dp"
                             android:drawablePadding="20dp"
                             android:fontFamily="@font/nunito_sans_italic"
-                            android:hint="type your surname here"
+                            android:hint="Type your surname here"
                             android:inputType="textEmailAddress"
                             android:paddingBottom="20dp"
                             android:textSize="12sp" />
@@ -156,7 +156,7 @@
                             android:layout_marginLeft="35dp"
                             android:drawablePadding="20dp"
                             android:fontFamily="@font/nunito_sans_italic"
-                            android:hint="type your mobile number here"
+                            android:hint="Type your mobile number here"
                             android:inputType="textEmailAddress"
                             android:paddingBottom="20dp"
                             android:textSize="12sp" />
@@ -224,7 +224,7 @@
                             android:layout_marginLeft="35dp"
                             android:drawablePadding="20dp"
                             android:fontFamily="@font/nunito_sans_italic"
-                            android:hint="type your username here"
+                            android:hint="Type your username here"
                             android:inputType="textEmailAddress"
                             android:paddingBottom="20dp"
                             android:textSize="12sp" />
@@ -272,7 +272,7 @@
                                 android:layout_marginTop="10dp"
                                 android:drawablePadding="20dp"
                                 android:fontFamily="@font/nunito_sans_italic"
-                                android:hint="type your password here"
+                                android:hint="Type your password here"
                                 android:inputType="textPassword"
                                 android:paddingBottom="20dp"
                                 android:textSize="12sp" />
@@ -322,7 +322,7 @@
                                 android:layout_marginTop="10dp"
                                 android:drawablePadding="20dp"
                                 android:fontFamily="@font/nunito_sans_italic"
-                                android:hint="type your password here"
+                                android:hint="retype your password here"
                                 android:inputType="textPassword"
                                 android:paddingBottom="20dp"
                                 android:textSize="12sp" />
@@ -367,7 +367,7 @@
                             android:layout_marginLeft="35dp"
                             android:drawablePadding="20dp"
                             android:fontFamily="@font/nunito_sans_italic"
-                            android:hint="type a referral code here"
+                            android:hint="Type a referral code here"
                             android:inputType="number"
                             android:paddingBottom="20dp"
                             android:textSize="12sp" />

@@ -20,8 +20,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -30,7 +30,7 @@
                 android:layout_marginTop="15dp">
 
                 <ImageView
-                    android:id="@+id/arrow"
+                    android:id="@+id/OrderInfo"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -42,11 +42,11 @@
                     android:id="@+id/homeText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/arrow"
+                    android:layout_toRightOf="@id/OrderInfo"
                     android:fontFamily="@font/nunito_sans"
                     android:text="Create Orders"
-                    android:textFontWeight="600"
                     android:textColor="#298DCC"
+                    android:textFontWeight="600"
                     android:textSize="18sp" />
 
                 <ImageView
@@ -93,8 +93,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
                 android:text="Yaba Road 12, Sounders street, Yaba."
                 android:textColor="@color/bluish"
                 android:textFontWeight="700"
@@ -131,57 +131,58 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="20dp">
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/orderImage"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/home_icon"
                     android:scaleType="centerCrop"
-                    app:civ_border_width="1dp"
-                    app:civ_border_color="#FF000000"/>
+                    android:src="@drawable/home_icon"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="1dp" />
 
                 <TextView
                     android:id="@+id/orderText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/orderImage"
                     android:layout_marginLeft="13dp"
+                    android:layout_toRightOf="@+id/orderImage"
                     android:fontFamily="@font/nunito_sans"
                     android:text="AP Energy"
-                    android:textFontWeight="300"
                     android:textColor="#298DCC"
+                    android:textFontWeight="300"
                     android:textSize="18sp" />
 
                 <TextView
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
                     android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="120dp"
+                    android:fontFamily="@font/nunito_sans"
                     android:text="4.4/5"
                     android:textColor="#6D6D6D"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/nunito_sans"/>
+                    android:textSize="14sp" />
 
 
                 <TextView
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
                     android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="20dp"
+                    android:fontFamily="@font/nunito_sans"
                     android:text="N80/kg"
                     android:textColor="#6D6D6D"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/nunito_sans"/>
+                    android:textSize="14sp" />
 
 
             </RelativeLayout>
+
             <RelativeLayout
 
                 android:layout_width="match_parent"
@@ -220,8 +221,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:orientation="vertical">
 
                     <RelativeLayout
@@ -234,7 +235,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="9dp"
-                            app:srcCompat="@drawable/ic_ellipse"/>
+                            app:srcCompat="@drawable/ic_ellipse" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -242,38 +243,39 @@
                             android:layout_marginLeft="110dp"
                             android:layout_toRightOf="@+id/ecli"
                             android:orientation="horizontal">
+
                             <ImageView
                                 android:id="@+id/angle1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:layout_marginRight="12dp"
-                                app:srcCompat="@drawable/ic_angle_side"/>
+                                app:srcCompat="@drawable/ic_angle_side" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
                                 android:text="3kg"
                                 android:textColor="@color/bluish"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
                                 android:layout_marginLeft="12dp"
+                                android:layout_marginTop="5dp"
 
-                                app:srcCompat="@drawable/ic_angle_side2"/>
+                                app:srcCompat="@drawable/ic_angle_side2" />
                         </LinearLayout>
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_cancel"
+                            android:layout_alignParentRight="true"
                             android:layout_marginTop="5dp"
                             android:layout_marginRight="12dp"
-                            android:layout_alignParentRight="true"/>
-
+                            app:srcCompat="@drawable/ic_cancel" />
 
 
                     </RelativeLayout>
@@ -283,30 +285,28 @@
                         android:layout_height="1dp"
                         android:layout_marginTop="10dp"
                         android:background="#E1E1E1" />
+
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        >
+                        android:layout_height="wrap_content">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textAlignment="viewEnd"
                             android:layout_marginTop="8dp"
-                            android:text="Add cylinder"
-                            android:textColor="@color/bluish"
                             android:layout_marginRight="35dp"
-                            android:gravity="end" />
+                            android:gravity="end"
+                            android:text="Add cylinder"
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/bluish" />
+
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
-
-
-                            app:srcCompat="@drawable/ic_add"/>
+                            app:srcCompat="@drawable/ic_add" />
                     </RelativeLayout>
                 </LinearLayout>
-
 
 
             </LinearLayout>
@@ -316,11 +316,11 @@
 
         <LinearLayout
             android:id="@+id/order"
-            android:onClick="@{()->viewModel.OnCart()}"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="280dp"
-            android:background="#298DCC">
+            android:background="#298DCC"
+            android:onClick="@{()->viewModel.OnCart()}">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -331,17 +331,17 @@
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                   >
+                    android:layout_height="wrap_content">
+
                     <TextView
                         android:id="@+id/item"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-
                         android:fontFamily="@font/nunito_sans"
-                        android:textFontWeight="600"
-                        android:text="1 Items"/>
+
+                        android:text="1 Items"
+                        android:textColor="@color/white"
+                        android:textFontWeight="600" />
 
                     <View
                         android:id="@+id/view"
@@ -349,18 +349,18 @@
                         android:layout_height="1dp"
                         android:layout_marginTop="12dp"
                         android:layout_toRightOf="@+id/item"
-                        android:rotation="270"
-                        android:background="#E1E1E1" />
+                        android:background="#E1E1E1"
+                        android:rotation="270" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
                         android:layout_toRightOf="@+id/view"
-                        android:textFontWeight="600"
-
                         android:fontFamily="@font/nunito_sans"
-                        android:text="N1,500"/>
+                        android:text="N1,500"
+
+                        android:textColor="@color/white"
+                        android:textFontWeight="600" />
                 </RelativeLayout>
 
                 <LinearLayout
@@ -368,20 +368,22 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
                         android:layout_marginRight="6dp"
                         android:fontFamily="@font/nunito_sans"
-                        android:textSize="15sp"
+                        android:text="View cart"
+                        android:textColor="@color/white"
                         android:textFontWeight="600"
-                        android:text="View cart"/>
+                        android:textSize="15sp" />
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        app:srcCompat="@drawable/ic_side_navbar"/>
+                        app:srcCompat="@drawable/ic_side_navbar" />
                 </LinearLayout>
 
             </RelativeLayout>
