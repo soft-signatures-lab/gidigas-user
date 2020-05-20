@@ -23,15 +23,15 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="20dp">
 
             <ImageView
                 android:id="@+id/arrow"
                 android:onClick="@{()->viewModel.OnArrowPayment()}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="22dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="20dp"
                 app:srcCompat="@drawable/ic_arrow2" />
 
             <TextView
@@ -40,8 +40,9 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/arrow"
                 android:fontFamily="@font/nunito_sans"
-                android:text="Payment"
-                android:textFontWeight="600"
+                android:text="Payment Details"
+                android:textFontWeight="700"
+
                 android:textColor="#298DCC"
                 android:textSize="18sp" />
 
@@ -73,7 +74,7 @@
                 android:onClick="@{()->viewModel.OnAddCard()}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 app:srcCompat="@drawable/ic_add_icon"
                 android:layout_gravity="center"/>
 

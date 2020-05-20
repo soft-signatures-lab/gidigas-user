@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:name="com.google.android.gms.maps.SupportMapFragment"
     tools:context="com.enyata.framework.mvvm.ui.order.OrderActivity">
 
@@ -14,124 +15,142 @@
 
 
     </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
-
-            <ImageView
-                android:id="@+id/arrow"
-                android:onClick="@{()->viewModel.OnOrderArrow()}"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="22dp"
-                app:srcCompat="@drawable/ic_arrow2" />
-
-            <TextView
-                android:id="@+id/homeText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/arrow"
-                android:fontFamily="@font/nunito_sans"
-                android:text="Orders"
-                android:textFontWeight="600"
-                android:textColor="#298DCC"
-                android:textSize="18sp" />
-
-            <ImageView
-                android:id="@+id/profile_image"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_alignParentRight="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/home_icon"
-                app:civ_border_color="@color/bluish"
-                app:civ_border_width="1dp" />
-
-
-        </RelativeLayout>
+        android:orientation="vertical"
+        android:background="@color/white">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginLeft="45dp"
-            android:layout_marginRight="45dp"
-            android:layout_gravity="center_vertical"
-            >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View and track your current and past orders"
-            android:textColor="#4F4F4F"
-            android:fontFamily="@font/nunito_sans"
-            android:textStyle="normal"
-            android:textSize="15sp"
-            android:textAlignment="center"
-            android:textFontWeight="100"
-            />
+
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp">
 
-                >
-                <Button
-                    android:id="@+id/btnActive"
+                <ImageView
+                    android:id="@+id/arrow"
+                    android:onClick="@{()->viewModel.OnOrderArrow()}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Active"
-                    android:textColor="@color/white"
-                    android:textFontWeight="500"
-                    android:clickable="false"
-                    android:background="@drawable/ic_btn"/>
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="20dp"
+                    app:srcCompat="@drawable/ic_arrow2" />
 
-                <Button
+                <TextView
+                    android:id="@+id/homeText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="History"
-                   android:layout_alignParentRight="true"
-                    android:textColor="@color/gray"
-                    android:textFontWeight="500"
-                    android:background="@drawable/btn_history"/>
+                    android:layout_toRightOf="@id/arrow"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="@string/order"
+                    android:textStyle="bold"
+                    android:textFontWeight="600"
+                    android:textColor="#298DCC"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentRight="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/home_icon"
+                    app:civ_border_color="@color/bluish"
+                    app:civ_border_width="1dp" />
 
 
             </RelativeLayout>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                app:srcCompat="@drawable/ic_orders"
-                android:layout_gravity="center"/>
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/nunito_sans"
-                android:text="Your currently have no active orders.\nCreate one?"
-                android:textAlignment="center"
-                android:textSize="16sp"
-                android:textColor="#4F4F4F"
-                android:textStyle="normal" />
+                android:orientation="vertical"
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                app:srcCompat="@drawable/ic_add_icon"
-                android:layout_gravity="center"/>
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_vertical"
+                >
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="38dp"
+                    android:layout_marginRight="30dp"
+                    android:text="@string/orderText"
+                    android:textColor="#4F4F4F"
+                    app:lineHeight="50sp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:textStyle="normal"
+                    android:textSize="15sp"
+                    android:textAlignment="textStart"
+                    android:gravity="start" />
+
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="38dp"
+                    android:layout_marginRight="38dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabRippleColor="@color/transparent"
+                    app:tabIndicator="@color/transparent"
+                    app:tabMode="fixed"
+                    app:tabBackground="@drawable/tab_bg"
+                    app:tabTextAppearance="@style/TabLayoutTextStyle"
+                    app:tabTextColor="@color/gray"
+                    android:fillViewport="true"
+                    app:tabSelectedTextColor="@color/white"
+
+                    >
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.viewpager.widget.ViewPager
+
+                    android:id="@+id/viewPager1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                </androidx.viewpager.widget.ViewPager>
+
+
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="80dp"-->
+<!--                    app:srcCompat="@drawable/ic_orders"-->
+<!--                    android:layout_gravity="center"/>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:fontFamily="@font/nunito_sans"-->
+<!--                    android:text="Your currently have no active orders.\nCreate one?"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:textColor="#4F4F4F"-->
+<!--                    android:textStyle="normal" />-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="30dp"-->
+<!--                    app:srcCompat="@drawable/ic_add_icon"-->
+<!--                    android:layout_gravity="center"/>-->
+
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </layout>

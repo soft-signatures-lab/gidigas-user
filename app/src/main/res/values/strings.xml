@@ -29,6 +29,8 @@
     <string name="login">Login</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="forgot">Forgot your password?</string>
+
 
     <string-array name="array_name">
         <item>Yaba</item>
@@ -41,10 +43,45 @@
 
     <!--Login Validation-->
     <string name="invalid_email_password">Please provide a valid email and password.</string>
+    <string name="fill_all_field">Please fill all fields</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">Map</string>
+    <!--hint-->
+    <string name="hintPassword">Enter password here</string>
+    <string name="hintConfirmPassword">Reenter password here</string>
+    <string name="hintEmail">Enter username here</string>
+    <string name="hintFirstName">Enter firstname here</string>
+    <string name="hintSurName">Enter surname here</string>
+    <string name="hintMobile">Enter mobile number here</string>
+    <string name="hintReferral">Enter referral code here</string>
+
+    <string name="firstName">First Name</string>
+    <string name="lastName">Surname</string>
+    <string name="mobile">Mobile Number</string>
+    <string name="Confirm">Confirm Password</string>
+    <string name="referral">Referral (optional)</string>
+    <string name="slide1">Refill your cooking gas from \nthe convenience of your \ncouch</string>
+    <string name="stress">Stress Free</string>
+    <string name="slide2">Have your gas delivered \nsafely in 30mins by our \nreliable dispatch riders</string>
+    <string name="slide3">Refill your cooking gas from \nthe convenience of your \ncouch</string>
+    <string name="happy">Happy Customer</string>
+    <string name="faq">FAQs</string>
+    <string name="contact">Contact</string>
+    <string name="terms">Terms and Conditions</string>
+    <string name="privacy">Privacy Policy</string>
+    <string name="splash">...gas, one touch away</string>
+    <string name="orders">Create Orders</string>
+    <string name="location">Location</string>
+    <string name="vendor">Vendor</string>
+    <string name="size">Cylinder Size</string>
+    <string name="order">Orders</string>
+    <string name="orderText">View and track your current and past orders</string>
+    <string name="mapText">Where do you want your gas delivered?</string>
+    <string name="mapHint">Search address, street, zip codes</string>
+    <string name="name">Hello Jolani!</string>
+    <string name="date">Monday  Feb - 19</string>
 
 
 </resources>

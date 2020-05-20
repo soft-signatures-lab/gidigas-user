@@ -28,7 +28,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="110dp"
-                android:background="@drawable/ic_img_bg"
                 android:orientation="vertical">
 
                 <TextView
@@ -47,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/nunito_sans"
-                    android:text="Have your gas delivered \nsafely in 30mins by our \nreliable dispatch riders"
+                    android:text="@string/slide2"
                     android:textAlignment="center"
                     android:textSize="16sp" />
 

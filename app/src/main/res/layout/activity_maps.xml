@@ -25,15 +25,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="10dp">
 
             <ImageView
                 android:id="@+id/arrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="22dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="20dp"
                 android:onClick="@{()->viewModel.CreateArrow()}"
                 app:srcCompat="@drawable/ic_arrow2" />
 
@@ -70,7 +70,7 @@
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="530dp" >
+            android:layout_height="635dp" >
 
         </fragment>
 
@@ -79,6 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
+                android:paddingBottom="15dp"
                 android:background="@drawable/ic_bar_bg"
                 android:orientation="vertical">
 
@@ -86,7 +87,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp">
 
@@ -94,7 +95,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
-                    android:text="Where do you want your gas delivered?"
+                    android:text="@string/mapText"
                     android:textColor="@color/bluish"
                     android:fontFamily="@font/nunito_sans"
                     android:textFontWeight="600"
@@ -109,9 +110,9 @@
                         android:id="@+id/searchLocation"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:layout_margin="5dp"
+                        android:layout_margin="3dp"
                         android:background="@drawable/search_bg"
-                        android:hint="Search address, street, zip codes"
+                        android:hint="@string/mapHint"
                         android:onClick="onClick"
                         android:paddingLeft="10dp"
 
@@ -134,7 +135,7 @@
                     android:id="@+id/nextBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="7dp"
                     android:background="@drawable/bg_button"
                     android:onClick="@{()->viewModel.OnNext()}"
                     android:padding="10dp">
@@ -158,6 +159,7 @@
                         app:srcCompat="@drawable/ic_side_navbar" />
                 </RelativeLayout>
                 </LinearLayout>
+
             </LinearLayout>
 
         </FrameLayout>

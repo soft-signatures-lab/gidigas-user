@@ -19,24 +19,23 @@ package com.enyata.framework.mvvm.data;
 import android.content.Context;
 
 import com.enyata.framework.mvvm.data.local.prefs.PreferencesHelper;
-import com.enyata.framework.mvvm.data.model.api.response.UserColorResponse;
-import com.enyata.framework.mvvm.data.model.api.response.UserResponse;
-import com.enyata.framework.mvvm.data.model.api.response.UsersRequest;
-import com.enyata.framework.mvvm.data.model.api.response.UsersResponse;
-import com.enyata.framework.mvvm.data.model.others.QuestionCardData;
+
+import com.enyata.framework.mvvm.data.model.api.request.LoginRequest;
+import com.enyata.framework.mvvm.data.model.api.request.SignUpRequest;
+import com.enyata.framework.mvvm.data.model.api.response.LoginResponse;
+import com.enyata.framework.mvvm.data.model.api.response.SignUpResponse;
+import com.enyata.framework.mvvm.data.model.api.response.VendorResponse;
 import com.enyata.framework.mvvm.data.remote.ApiHeader;
 import com.enyata.framework.mvvm.data.remote.ApiHelper;
 import com.google.gson.Gson;
-import com.enyata.framework.mvvm.data.model.api.response.LoginRequest;
-import com.enyata.framework.mvvm.data.model.api.response.LoginResponse;
+
 
 import io.reactivex.Flowable;
-import io.reactivex.Observable;
 import io.reactivex.Single;
 
-import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Singleton;
+
 @Singleton
 public class AppDataManager implements DataManager {
 
@@ -60,12 +59,6 @@ public class AppDataManager implements DataManager {
 
 
     @Override
-    public Single<LoginResponse> login(LoginRequest request) {
-        return mApiHelper.login(request);
-    }
-
-
-    @Override
     public ApiHeader getApiHeader() {
         return mApiHelper.getApiHeader();
     }
@@ -73,11 +66,84 @@ public class AppDataManager implements DataManager {
 
     @Override
     public String getAccessToken() {
-        return null;
+        return mPreferencesHelper.getAccessToken();
     }
 
     @Override
     public void setAccessToken(String accessToken) {
+        mPreferencesHelper.setAccessToken(accessToken);
+        mApiHelper.getApiHeader().getProtectedApiHeader().setAuthorization(accessToken);
+    }
 
+    @Override
+    public int getCurrentUserLoggedInMode() {
+        return mPreferencesHelper.getCurrentUserLoggedInMode();
+    }
+
+    @Override
+    public void setCurrentUserLoggedInMode(LoggedInMode mode) {
+        mPreferencesHelper.setCurrentUserLoggedInMode(mode);
+    }
+
+    @Override
+    public String getCurrentUserName() {
+        return mPreferencesHelper.getCurrentUserName();
+    }
+
+    @Override
+    public void setCurrentUserName(String userName) {
+        mPreferencesHelper.setCurrentUserName(userName);
+    }
+
+    @Override
+    public String getCurrentUserSurname() {
+        return mPreferencesHelper.getCurrentUserSurname();
+    }
+
+    @Override
+    public void setCurrentUserSurname(String userSurname) {
+        mPreferencesHelper.setCurrentUserSurname(userSurname);
+    }
+
+    @Override
+    public String getUserEmail() {
+        return mPreferencesHelper.getUserEmail();
+    }
+
+    @Override
+    public void setUserEmail(String userEmail) {
+mPreferencesHelper.setUserEmail(userEmail);
+    }
+
+    @Override
+    public Single<SignUpResponse> signup(SignUpRequest.Request request) {
+        return mApiHelper.signup(request);
+    }
+
+    @Override
+    public Single<LoginResponse> login(LoginRequest.Request request) {
+        return mApiHelper.login(request);
+    }
+
+    @Override
+    public Flowable<VendorResponse> vendor() {
+        return mApiHelper.vendor();
+    }
+
+    @Override
+    public void updateUserInfo(
+            String accessToken,
+            String surname,
+            String firstname) {
+
+        setAccessToken(accessToken);
+        setCurrentUserName(firstname);
+        setCurrentUserSurname(surname);
+
+    }
+
+    @Override
+    public void updateLoginStatus(LoggedInMode loggedInMode) {
+        setCurrentUserLoggedInMode(loggedInMode);
     }
 }

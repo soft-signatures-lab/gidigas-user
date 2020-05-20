@@ -28,6 +28,17 @@ import javax.inject.Inject;
 
 public class AppPreferencesHelper implements PreferencesHelper {
 
+    private static final String PREF_KEY_ACCESS_TOKEN = "PREF_KEY_ACCESS_TOKEN";
+
+    private static final String PREF_KEY_CURRENT_USER_SURNAME = "PREF_KEY_CURRENT_USER_SURNAME";
+
+    private static final String PREF_KEY_CURRENT_USER_NAME = "PREF_KEY_CURRENT_USER_NAME";
+
+    private static final String PREF_KEY_USER_LOGGED_IN_MODE = "PREF_KEY_USER_LOGGED_IN_MODE";
+
+    private static final String PREF_KEY_USER_EMAIL = "PREF_KEY_USER_EMAIL";
+
+
 
     private final SharedPreferences mPrefs;
 
@@ -39,11 +50,56 @@ public class AppPreferencesHelper implements PreferencesHelper {
 
     @Override
     public String getAccessToken() {
-        return null;
+
+        return mPrefs.getString(PREF_KEY_ACCESS_TOKEN,null);
     }
 
     @Override
     public void setAccessToken(String accessToken) {
-
+        mPrefs.edit().putString(PREF_KEY_ACCESS_TOKEN,accessToken).apply();
     }
+
+    @Override
+    public int getCurrentUserLoggedInMode() {
+        return mPrefs.getInt(PREF_KEY_USER_LOGGED_IN_MODE,DataManager.LoggedInMode.LOGGED_IN_MODE_LOGGED_OUT.getType());
+    }
+
+    @Override
+    public void setCurrentUserLoggedInMode(DataManager.LoggedInMode mode) {
+        mPrefs.edit().putInt(PREF_KEY_USER_LOGGED_IN_MODE,mode.getType()).apply();
+    }
+
+    @Override
+    public String getCurrentUserName() {
+        return mPrefs.getString(PREF_KEY_CURRENT_USER_NAME,null);
+    }
+
+    @Override
+    public void setCurrentUserName(String userName) {
+mPrefs.edit().putString(PREF_KEY_CURRENT_USER_NAME,userName).apply();
+    }
+
+    @Override
+    public String getCurrentUserSurname() {
+        return mPrefs.getString(PREF_KEY_CURRENT_USER_SURNAME,null);
+    }
+
+    @Override
+    public void setCurrentUserSurname(String userSurname) {
+        mPrefs.edit().putString(PREF_KEY_CURRENT_USER_SURNAME,userSurname).apply();
+    }
+
+    @Override
+    public String getUserEmail() {
+        return mPrefs.getString(PREF_KEY_USER_EMAIL,null);
+    }
+
+    @Override
+    public void setUserEmail(String userEmail) {
+         mPrefs.edit().putString(PREF_KEY_USER_EMAIL,userEmail).apply();
+    }
+
+
+
+
 }

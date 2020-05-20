@@ -32,6 +32,7 @@ import com.enyata.framework.mvvm.ui.orderinfo.OrderInfoActivity;
 import com.enyata.framework.mvvm.ui.payment.PaymentActivity;
 import com.enyata.framework.mvvm.ui.splash.SplashActivity;
 import com.enyata.framework.mvvm.ui.support.SupportActivity;
+import com.enyata.framework.mvvm.ui.vendor.VendorActivity;
 
 
 import dagger.Module;
@@ -78,6 +79,9 @@ public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector
     abstract CartActivity bindCartActivity();
+
+    @ContributesAndroidInjector
+    abstract VendorActivity bindVendorActivity();
 
 
 

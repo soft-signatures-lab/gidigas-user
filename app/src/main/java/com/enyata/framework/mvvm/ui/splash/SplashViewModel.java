@@ -28,6 +28,12 @@ public class SplashViewModel extends BaseViewModel<SplashNavigator> {
     }
 
     public void decideNextActivity() {
-        getNavigator().openMainActivity();
+        if (getDataManager().getCurrentUserLoggedInMode() == DataManager.LoggedInMode.LOGGED_IN_MODE_LOGGED_IN.getType()) {
+            getNavigator().openLoginActivity();
+        } else {
+            getNavigator().openMainActivity();
+        }
     }
+
+
 }

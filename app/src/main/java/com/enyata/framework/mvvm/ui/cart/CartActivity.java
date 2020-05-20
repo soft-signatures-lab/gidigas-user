@@ -57,11 +57,16 @@ ImageView cart;
 
 
         btn2.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
+
                 linearLayout.setVisibility(View.VISIBLE);
-            } else {
-                linearLayout.setVisibility(View.GONE);
-            }
+                btn1.setChecked(false);
+
+
+        });
+
+        btn1.setOnCheckedChangeListener((compoundButton, b) -> {
+            btn2.setChecked(false);
+            linearLayout.setVisibility(View.GONE);
         });
 
         cart.setOnClickListener(view -> {
@@ -70,6 +75,5 @@ ImageView cart;
 
         });
     }
-
 
 }

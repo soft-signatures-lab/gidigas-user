@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.enyata.framework.mvvm.BR;
 import com.enyata.framework.mvvm.R;
@@ -25,6 +26,10 @@ public class OrderInfoActivity extends BaseActivity<ActivityOrderInfoBinding, Or
 ActivityOrderInfoBinding activityOrderInfoBinding;
 OrderInfoViewModel orderInfoViewModel;
 ImageView orderInfo;
+ImageView angleA;
+ImageView angleB;
+TextView kilo;
+    int i = 0;
     @Override
     public int getBindingVariable() {
         return com.enyata.framework.mvvm.BR.viewModel;
@@ -45,14 +50,54 @@ ImageView orderInfo;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activityOrderInfoBinding = getViewDataBinding();
-       orderInfoViewModel.setNavigator(this);
+        orderInfoViewModel.setNavigator(this);
 
-       orderInfo = activityOrderInfoBinding.OrderInfo;
+        orderInfo = activityOrderInfoBinding.OrderInfo;
 
-       orderInfo.setOnClickListener(view -> {
-           Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
-           startActivity(intent);
-       });
+        orderInfo.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+            startActivity(intent);
+        });
+        angleA = activityOrderInfoBinding.angle1;
+        angleB = activityOrderInfoBinding.angle2;
+
+        kilo = activityOrderInfoBinding.kiloGram;
+
+
+        angleB.setOnClickListener(view -> {
+            //angleB.setColorFilter(getResources().getColor(R.color.bluish));
+            if (kilo.getText().toString().equals("0")) {
+                kilo.setText("3kg");
+                angleA.setVisibility(View.VISIBLE);
+
+            } else if (kilo.getText().toString().equals("3kg")) {
+                kilo.setText("5kg");
+            } else if (kilo.getText().toString().equals("5kg")) {
+                kilo.setText("7kg");
+            } else {
+                kilo.setText("12.5kg");
+            }
+
+
+        });
+
+        angleA.setOnClickListener(view -> {
+           // angleA.setColorFilter(getResources().getColor(R.color.bluish));
+            //angleB.setColorFilter(getResources().getColor(R.color.gray));
+            if(kilo.getText().toString().equals("12.5kg")) {
+                kilo.setText("7kg");
+
+            }else if (kilo.getText().toString().equals("7kg")){
+                kilo.setText("5kg");
+            }else if (kilo.getText().toString().equals("5kg")){
+                kilo.setText("3kg");
+            }else {
+                kilo.setText("0");
+                angleA.setVisibility(View.GONE);
+            }
+        });
+
+
     }
 
     @Override

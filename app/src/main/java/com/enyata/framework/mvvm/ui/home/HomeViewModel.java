@@ -18,9 +18,25 @@ public class HomeViewModel extends BaseViewModel<HomeNavigator> {
 
     public  void OnOrder(){getNavigator().onorder();}
 
-    public  void  OnAddress(){getNavigator().onaddress();}
+    public  void  OnVendor(){getNavigator().onvendor();}
 
     public void  OnPayment(){getNavigator().onpayment();}
 
 
+    public void setFirstName(String firstName){
+        getDataManager().setCurrentUserName(firstName);
+
+    }
+
+    public  String getFirstName(){
+        return getDataManager().getCurrentUserName();
+    }
+
+    public void  setSurName(String surName){
+        getDataManager().setCurrentUserSurname(surName);
+    }
+
+    public String getSurName(){
+        return getDataManager().getCurrentUserSurname();
+    }
 }

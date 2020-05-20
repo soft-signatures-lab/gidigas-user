@@ -17,12 +17,13 @@
 package com.enyata.framework.mvvm.data.remote;
 
 
-import com.enyata.framework.mvvm.data.model.api.response.LoginRequest;
+import com.enyata.framework.mvvm.data.model.api.request.LoginRequest;
+import com.enyata.framework.mvvm.data.model.api.request.SignUpRequest;
+
 import com.enyata.framework.mvvm.data.model.api.response.LoginResponse;
-import com.enyata.framework.mvvm.data.model.api.response.UserColorResponse;
-import com.enyata.framework.mvvm.data.model.api.response.UserResponse;
-import com.enyata.framework.mvvm.data.model.api.response.UsersRequest;
-import com.enyata.framework.mvvm.data.model.api.response.UsersResponse;
+import com.enyata.framework.mvvm.data.model.api.response.SignUpResponse;
+
+import com.enyata.framework.mvvm.data.model.api.response.VendorResponse;
 import com.rx2androidnetworking.Rx2AndroidNetworking;
 
 import io.reactivex.Flowable;
@@ -44,18 +45,34 @@ public class AppApiHelper implements ApiHelper {
         mApiHeader = apiHeader;
     }
 
+    @Override
+    public ApiHeader getApiHeader() {
+        return mApiHeader;
+    }
+
+
 
     @Override
-    public Single<LoginResponse> login(LoginRequest request) {
-        return Rx2AndroidNetworking.post(ApiEndPoint.SUPER_AGENT_LOGIN)
+    public Single<SignUpResponse> signup(SignUpRequest.Request request) {
+        return Rx2AndroidNetworking.post(ApiEndPoint.GIDI_GAS_USER_SIGNUP)
+                .addBodyParameter(request)
+                .build()
+                .getObjectSingle(SignUpResponse.class);
+    }
+
+    @Override
+    public Single<LoginResponse> login(LoginRequest.Request request) {
+        return Rx2AndroidNetworking.post(ApiEndPoint.GIDI_GAS_USER_LOGIN)
                 .addBodyParameter(request)
                 .build()
                 .getObjectSingle(LoginResponse.class);
     }
 
     @Override
-    public ApiHeader getApiHeader() {
-        return mApiHeader;
+    public Flowable<VendorResponse> vendor() {
+        return Rx2AndroidNetworking.get(ApiEndPoint.GIDI_GAS_VENDOR)
+                .addHeaders(mApiHeader.getProtectedApiHeader())
+                .build().getObjectFlowable(VendorResponse.class);
     }
 
 

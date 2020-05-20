@@ -16,12 +16,12 @@
 
 package com.enyata.framework.mvvm.data.remote;
 
-import com.enyata.framework.mvvm.data.model.api.response.LoginRequest;
+
+import com.enyata.framework.mvvm.data.model.api.request.LoginRequest;
+import com.enyata.framework.mvvm.data.model.api.request.SignUpRequest;
 import com.enyata.framework.mvvm.data.model.api.response.LoginResponse;
-import com.enyata.framework.mvvm.data.model.api.response.UserColorResponse;
-import com.enyata.framework.mvvm.data.model.api.response.UserResponse;
-import com.enyata.framework.mvvm.data.model.api.response.UsersRequest;
-import com.enyata.framework.mvvm.data.model.api.response.UsersResponse;
+import com.enyata.framework.mvvm.data.model.api.response.SignUpResponse;
+import com.enyata.framework.mvvm.data.model.api.response.VendorResponse;
 
 import io.reactivex.Flowable;
 import io.reactivex.Single;
@@ -32,7 +32,11 @@ import io.reactivex.Single;
 
 public interface ApiHelper {
 
-    Single<LoginResponse> login(LoginRequest request);
+
     ApiHeader getApiHeader();
+
+    Single<SignUpResponse> signup(SignUpRequest.Request request);
+    Single<LoginResponse>  login(LoginRequest.Request request);
+    Flowable<VendorResponse> vendor();
 
 }

@@ -1,0 +1,65 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:context="com.enyata.framework.mvvm.ui.vendor.VendorActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.enyata.framework.mvvm.ui.vendor.VendorViewModel" />
+    </data>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:background="@color/white">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:orientation="vertical">
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="20dp">
+
+               <ImageView
+                   android:id="@+id/VendorArrow"
+
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="4dp"
+                   android:layout_marginRight="18dp"
+                   app:srcCompat="@drawable/ic_arrow2" />
+
+               <TextView
+                   android:id="@+id/vendor1"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_toRightOf="@id/VendorArrow"
+                   android:fontFamily="@font/nunito_sans"
+                   android:text="Vendors"
+                   android:textFontWeight="700"
+                   android:textColor="#298DCC"
+                   android:textSize="18sp" />
+
+
+           </RelativeLayout>
+
+           <ListView
+               android:id="@+id/vendorListView"
+               android:layout_marginTop="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:dividerHeight="4.0sp"
+               android:divider="#f3f3f3"/>
+       </LinearLayout>
+   </LinearLayout>
+</layout>

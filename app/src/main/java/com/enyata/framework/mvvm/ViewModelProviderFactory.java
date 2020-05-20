@@ -21,6 +21,7 @@ import com.enyata.framework.mvvm.ui.orderinfo.OrderInfoViewModel;
 import com.enyata.framework.mvvm.ui.payment.PaymentViewModel;
 import com.enyata.framework.mvvm.ui.splash.SplashViewModel;
 import com.enyata.framework.mvvm.ui.support.SupportViewModel;
+import com.enyata.framework.mvvm.ui.vendor.VendorViewModel;
 import com.enyata.framework.mvvm.utils.rx.SchedulerProvider;
 
 import javax.inject.Inject;
@@ -81,6 +82,9 @@ public class ViewModelProviderFactory extends ViewModelProvider.NewInstanceFacto
         }else if (modelClass.isAssignableFrom(CartViewModel.class)) {
             //noinspection unchecked
             return (T) new CartViewModel(dataManager, schedulerProvider);
+        }else if (modelClass.isAssignableFrom(VendorViewModel.class)) {
+            //noinspection unchecked
+            return (T) new VendorViewModel(dataManager, schedulerProvider);
         }
 
 

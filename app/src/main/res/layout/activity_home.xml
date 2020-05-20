@@ -15,17 +15,17 @@
     </data>
 
 
-        <androidx.drawerlayout.widget.DrawerLayout
-            android:id="@+id/drawer_layout"
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            tools:openDrawer="start">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,13 +37,14 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="25dp">
 
                     <ImageView
                         android:id="@+id/navigationDrawerIcon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="20dp"
                         app:srcCompat="@drawable/ic_menubar" />
 
                     <TextView
@@ -53,9 +54,10 @@
                         android:layout_toRightOf="@id/navigationDrawerIcon"
                         android:fontFamily="@font/nunito_sans"
                         android:text="Home"
-
                         android:textColor="#298DCC"
-                        android:textSize="17sp" />
+                        android:textStyle="bold"
+                        android:textFontWeight="600"
+                        android:textSize="18sp" />
 
                     <ImageView
                         android:id="@+id/profile_image"
@@ -64,31 +66,31 @@
                         android:layout_alignParentRight="true"
                         android:scaleType="centerCrop"
                         android:src="@drawable/home_icon"
-                      app:civ_border_color="@color/bluish"
+                        app:civ_border_color="@color/bluish"
                         app:civ_border_width="1dp" />
 
 
                 </RelativeLayout>
 
-                    <TextView
-                        android:id="@+id/homeText1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/nunito_sans"
-                        android:text="Hello Jolani!"
-                        android:layout_marginTop="15dp"
-                        android:textColor="#298DCC"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/homeText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="@string/name"
+                    android:textColor="#298DCC"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
 
                 <TextView
                     android:id="@+id/date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_sans"
-                    android:text="Monday  Feb - 19 "
                     android:layout_marginTop="15dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="@string/date"
                     android:textColor="#777777"
                     android:textSize="14sp"
                     android:textStyle="normal" />
@@ -96,104 +98,100 @@
                 <GridLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:rowCount="2"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginRight="15dp"
                     android:columnCount="2"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="50dp">
+                    android:rowCount="2">
 
                     <Button
-                        android:onClick="@{()->viewModel.OnOrder()}"
                         android:id="@+id/BtnOrder"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:paddingTop="25dp"
-                        android:paddingBottom="25dp"
-                        android:fontFamily="@font/nunito_sans"
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
+                        android:layout_gravity="fill"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/bg_button"
                         android:drawableTop="@drawable/ic_order"
+                        android:fontFamily="@font/nunito_sans"
+                        android:onClick="@{()->viewModel.OnOrder()}"
+                        android:paddingTop="25dp"
+                        android:paddingBottom="25dp"
                         android:text="\nOrders"
                         android:textAllCaps="false"
-                        android:background="@drawable/bg_button"
-                        android:textColor="#fff"
-                        android:layout_gravity="fill"
-                        />
+                        android:textColor="#fff" />
 
                     <Button
                         android:id="@+id/BtnDeals"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:paddingTop="25dp"
-                        android:paddingBottom="25dp"
-                        android:fontFamily="@font/nunito_sans"
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
-                        android:drawableTop="@drawable/ic_deals"
-
-                        android:text="\nDeals"
-                        android:background="@drawable/bg_button"
-                        android:textColor="#fff"
-                        android:textAllCaps="false"
                         android:layout_gravity="fill"
-                        />
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/bg_button"
+                        android:drawableTop="@drawable/ic_deals"
+                        android:fontFamily="@font/nunito_sans"
+
+                        android:paddingTop="25dp"
+                        android:paddingBottom="25dp"
+                        android:text="\nDeals"
+                        android:textAllCaps="false"
+                        android:textColor="#fff" />
 
                     <Button
                         android:id="@+id/BtnPayment"
-                        android:onClick="@{()->viewModel.OnPayment()}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="17dp"
-                        android:fontFamily="@font/nunito_sans"
-                        android:paddingTop="35dp"
-                        android:paddingBottom="25dp"
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
-                        android:drawableTop="@drawable/ic_payment"
-                        android:text="\nPayments\nDetails"
-                        android:background="@drawable/bg_button"
-                        android:textColor="#fff"
-                        android:textSize="13sp"
-                        android:textAllCaps="false"
                         android:layout_gravity="fill"
-                        />
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/bg_button"
+                        android:drawableTop="@drawable/ic_payment"
+                        android:fontFamily="@font/nunito_sans"
+                        android:onClick="@{()->viewModel.OnPayment()}"
+                        android:paddingTop="35dp"
+                        android:paddingBottom="25dp"
+                        android:text="\nPayments\nDetails"
+                        android:textAllCaps="false"
+                        android:textColor="#fff"
+                        android:textSize="13sp" />
 
 
                     <Button
-                        android:onClick="@{()->viewModel.OnAddress()}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="17dp"
-                        android:paddingTop="35dp"
-                        android:paddingBottom="25dp"
-                        android:fontFamily="@font/nunito_sans"
                         android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
-                        android:drawableTop="@drawable/ic_address"
-                        android:text="Address Book"
-                        android:background="@drawable/bg_button"
-                        android:textColor="#fff"
-                        android:textSize="13sp"
-                        android:textAllCaps="false"
                         android:layout_gravity="fill"
-                        />
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/bg_button"
+                        android:drawableTop="@drawable/ic_address"
+                        android:fontFamily="@font/nunito_sans"
+                        android:onClick="@{()->viewModel.OnVendor()}"
+                        android:paddingTop="35dp"
+                        android:paddingBottom="25dp"
+                        android:text="Vendors"
+                        android:textAllCaps="false"
+                        android:textColor="#fff"
+                        android:textSize="13sp" />
                 </GridLayout>
 
                 <LinearLayout
-                    android:onClick="@{() -> viewModel.OnHelp()}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="50dp"
                     android:background="@drawable/ic_bg_black"
+                    android:onClick="@{() -> viewModel.OnHelp()}"
                     android:orientation="horizontal"
                     android:paddingLeft="10dp"
-                    android:paddingBottom="7dp"
-                    android:paddingRight="20dp">
+                    android:paddingRight="20dp"
+                    android:paddingBottom="7dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -206,8 +204,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_marginTop="20dp"
-                        android:lineHeight="60dp"
                         android:fontFamily="@font/nunito_sans"
+                        android:lineHeight="60dp"
                         android:text="Help &amp; Support"
                         android:textColor="@color/white"
                         android:textSize="14sp"
@@ -215,23 +213,24 @@
 
                 </LinearLayout>
 
-            </LinearLayout>
                 <LinearLayout
                     android:id="@+id/order"
-                    android:onClick="@{()->viewModel.onCreateOrder()}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="130dp"
-                    android:background="@drawable/color_text">
+                    android:layout_marginTop="100dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/color_text"
+                    android:onClick="@{()->viewModel.onCreateOrder()}">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
+                        android:fontFamily="@font/nunito_sans"
+                        android:gravity="center_vertical"
                         android:text="Create Order"
                         android:textAlignment="center"
                         android:textColor="@color/white"
-                        android:gravity="center_vertical"
-                        android:fontFamily="@font/nunito_sans"
 
                         android:textFontWeight="500"
                         android:textSize="20sp" />
@@ -239,19 +238,23 @@
                 </LinearLayout>
 
             </LinearLayout>
-            <com.google.android.material.navigation.NavigationView
-                android:id="@+id/nav_view"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="start"
-                android:background="#f2f2f2"
-                android:fitsSystemWindows="true"
-                app:headerLayout="@layout/nav_header"
-                app:itemTextAppearance="@style/NavigationView"
-                app:itemTextColor="@color/light_dark"
-                app:menu="@menu/drawer">
 
-            </com.google.android.material.navigation.NavigationView>
-        </androidx.drawerlayout.widget.DrawerLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="#f2f2f2"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header"
+            app:itemTextAppearance="@style/NavigationView"
+            app:itemTextColor="@color/light_dark"
+            app:menu="@menu/drawer">
+
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
 
 </layout>

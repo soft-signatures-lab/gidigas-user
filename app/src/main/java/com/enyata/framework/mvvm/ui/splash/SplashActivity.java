@@ -64,6 +64,19 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashVi
     }
 
     @Override
+    public void openLoginActivity() {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+       startActivity(intent);
+    }
+
+//    @Override
+//    public void openLoginActivity() {
+//        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//        startActivity(intent);
+//    }
+
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mSplashViewModel.setNavigator(this);

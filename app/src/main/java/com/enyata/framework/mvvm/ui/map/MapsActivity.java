@@ -1,15 +1,19 @@
 package com.enyata.framework.mvvm.ui.map;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 
+import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -38,11 +42,13 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 
 import javax.inject.Inject;
 
@@ -65,7 +71,7 @@ public class MapsActivity extends BaseActivity<ActivityMapsBinding, MapViewModel
     LocationRequest mLocationRequest;
     LocationListener locationListener;
 
-    private static final int REQUEST_CODE = 101;
+    private static final int REQUEST_CODE = 99;
 
     @Override
     public int getBindingVariable() {
@@ -117,6 +123,18 @@ public class MapsActivity extends BaseActivity<ActivityMapsBinding, MapViewModel
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        try {
+            boolean success = mMap.setMapStyle(
+                    MapStyleOptions.loadRawResourceStyle(
+                            this, R.raw.map_style));
+
+            if (!success) {
+                Log.e("hello", "Style parsing failed.");
+            }
+        } catch (Resources.NotFoundException e) {
+            Log.e("hello", "Can't find style. Error: ", e);
+        }
+
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -132,7 +150,7 @@ public class MapsActivity extends BaseActivity<ActivityMapsBinding, MapViewModel
     public boolean checkUserLocation() {
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED) {
+                != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
             } else {
@@ -182,6 +200,16 @@ public class MapsActivity extends BaseActivity<ActivityMapsBinding, MapViewModel
         //Place current location marker
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+        markerOptions.title("find me here");
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
+
+        mMap.addMarker(markerOptions);
+        mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(6));
+        mMap.clear();
+
+
 
         //stop location updates
         if (mGoogleApiClient != null) {
@@ -193,8 +221,8 @@ public class MapsActivity extends BaseActivity<ActivityMapsBinding, MapViewModel
     @Override
     public void onConnected(@Nullable Bundle bundle) {
         mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(1000);
-        mLocationRequest.setFastestInterval(1000);
+        mLocationRequest.setInterval(1100);
+        mLocationRequest.setFastestInterval(2000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
@@ -215,6 +243,7 @@ public class MapsActivity extends BaseActivity<ActivityMapsBinding, MapViewModel
     }
 
 
+
     public void onClick(View view) {
 
         switch (view.getId()) {
@@ -227,10 +256,10 @@ public class MapsActivity extends BaseActivity<ActivityMapsBinding, MapViewModel
                 MarkerOptions userMarkerOptions = new MarkerOptions();
 
                 if (!TextUtils.isEmpty(address)) {
-                    Geocoder geocoder = new Geocoder(this);
+                    Geocoder geocoder = new Geocoder(this, Locale.getDefault());
 
                     try {
-                        addressList = geocoder.getFromLocationName(address, 6);
+                        addressList = geocoder.getFromLocationName(address, 2);
                         if (addressList != null) {
                             for (int i = 0; i < addressList.size(); i++) {
                                 Address userAddress = addressList.get(i);
@@ -241,7 +270,9 @@ public class MapsActivity extends BaseActivity<ActivityMapsBinding, MapViewModel
 
                                 mMap.addMarker(userMarkerOptions);
                                 mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-                                mMap.animateCamera(CameraUpdateFactory.zoomTo(6));
+                                //mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
+                                mMap.setMaxZoomPreference(10);
+                                mMap.clear();
 
                             }
                         } else {

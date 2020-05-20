@@ -43,49 +43,6 @@ public class ImageAdapter extends FragmentPagerAdapter{
         return 4;
     }
 
-//    @NonNull
-//    @Override
-//    public Object instantiateItem(@NonNull ViewGroup container, int position) {
-//
-//        View view = layoutInflater.inflate(layouts[position],container,false);
-//
-//        switch (position){
-//            case 0:
-//
-//                break;
-//            case 1:
-//                break;
-//            case 2:
-//
-//                break;
-//            case 3:
-//                LinearLayout getStarted = view.findViewById(R.id.getStarted);
-//                getStarted.setOnClickListener(view1 -> {
-//                    Intent intent = new Intent(context, MainActivity.class);
-//                    context.startActivity(intent);
-//                });
-//                break;
-//
-//        }
-//
-//
-//        container.addView(view);
-//
-//        return view;
-//    }
 
-//    @Override
-//    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-//        View view = (View) object;
-//        container.removeView(view);
-//    }
-//
-//    @Override
-//    public void onClick(View view) {
-//        switch (view.getId()){
-//
-//        }
-//
-//    }
 }
 

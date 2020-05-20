@@ -1,0 +1,73 @@
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeightLarge"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/cardview_shadow_end_color"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="6dp">
+<LinearLayout
+    android:id="@+id/BuyData"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:padding="10dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/vendorLogo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_mailicon"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:id="@+id/vendorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_sans"
+            android:text="Vendor name"
+            android:textColor="@color/bluish"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/perkg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vendorName"
+            android:fontFamily="@font/nunito_sans"
+            android:text="amount per kg"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/perkg"
+            android:fontFamily="@font/nunito_sans"
+            android:text="location of vendor"
+            android:textColor="@color/gray"
+            android:textSize="12sp" />
+
+        <RatingBar
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:saveEnabled="true"
+            android:scaleX="0.3"
+            android:scaleY="0.3"
+            android:theme="@style/RatingBar"
+            android:layout_marginLeft="50dp"
+            android:layout_alignParentRight="true"
+            android:numStars="5"/>
+    </RelativeLayout>
+
+</LinearLayout>
+</androidx.cardview.widget.CardView>

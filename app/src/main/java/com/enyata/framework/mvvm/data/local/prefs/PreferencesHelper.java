@@ -25,4 +25,19 @@ public interface PreferencesHelper {
 
     void setAccessToken(String accessToken);
 
+    int getCurrentUserLoggedInMode();
+
+    void setCurrentUserLoggedInMode(DataManager.LoggedInMode mode);
+
+    String getCurrentUserName();
+    void setCurrentUserName(String userName);
+
+    String getCurrentUserSurname();
+    void setCurrentUserSurname(String userSurname);
+
+    String getUserEmail();
+    void setUserEmail(String userEmail);
+
+
+
 }

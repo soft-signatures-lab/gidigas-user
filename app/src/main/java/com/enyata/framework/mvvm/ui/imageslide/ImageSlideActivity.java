@@ -6,11 +6,14 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
 import com.enyata.framework.mvvm.R;
 import com.enyata.framework.mvvm.ViewModelProviderFactory;
 import com.enyata.framework.mvvm.databinding.ActivityImageSlideBinding;
@@ -30,6 +33,7 @@ ImageSlideViewModel imageSlideViewModel;
     ImageAdapter imageAdapter;
     ViewPager viewPager;
     LinearLayout linearLayout;
+    TextView  textView;
     private int[] layouts = {R.layout.fragment_image_stress, R.layout.fragment_image_fast, R.layout.fragment_image_affordable,R.layout.fragment_image_customer};
 
     @Override
@@ -53,7 +57,13 @@ ImageSlideViewModel imageSlideViewModel;
         super.onCreate(savedInstanceState);
         activityImageSlideBinding = getViewDataBinding();
         imageSlideViewModel.setNavigator(this);
+
+
+
         linearLayout = activityImageSlideBinding.getStarted;
+        textView = activityImageSlideBinding.skip;
+
+
 
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,28 +75,32 @@ ImageSlideViewModel imageSlideViewModel;
 
 
 
+
         dotLayouts = findViewById(R.id.dotsLayout);
         viewPager = findViewById(R.id.viewpager);
         imageAdapter = new ImageAdapter(this,getSupportFragmentManager());
         viewPager.setAdapter(imageAdapter);
         viewPager.setOffscreenPageLimit(4);
-        viewPager.setPageTransformer(true, new ZoomOutPageTransformer());
+
         createDots(0);
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                if(position == 3){
-                    linearLayout.setVisibility(View.VISIBLE);
-                }else {
-                    linearLayout.setVisibility(View.GONE);
-                }
+
 
             }
 
             @Override
             public void onPageSelected(int position) {
                 createDots(position);
+                if(position == 3){
+                    linearLayout.setVisibility(View.VISIBLE);
+                    textView.setVisibility(View.GONE);
+                }else {
+                    linearLayout.setVisibility(View.GONE);
+                    textView.setVisibility(View.VISIBLE);
+                }
 
             }
 

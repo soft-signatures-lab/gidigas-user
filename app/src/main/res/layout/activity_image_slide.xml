@@ -13,28 +13,38 @@
 
 
     </data>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        android:orientation="vertical">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
 
        <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="match_parent"
-           android:orientation="vertical"
-           android:layout_marginTop="20dp">
-           <TextView
-               android:onClick="@{()->viewModel.onSkip()}"
+           android:layout_marginRight="25dp"
+           android:layout_marginLeft="25dp"
+           android:orientation="vertical">
+
+           <LinearLayout
                android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:text="Skip"
-               android:gravity="end"
-               android:textColor="#777777"
-               android:layout_marginRight="30dp"
-               android:fontFamily="@font/nunito_sans"
-               android:textFontWeight="500"
-               android:textSize="18sp"/>
+               android:layout_height="match_parent"
+               android:orientation="vertical"
+               android:layout_marginTop="20dp">
+               <TextView
+                   android:id="@+id/skip"
+                   android:visibility="visible"
+                   android:onClick="@{()->viewModel.onSkip()}"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Skip"
+                   android:textAlignment="viewEnd"
+
+                   android:textColor="#777777"
+
+                   android:fontFamily="@font/nunito_sans"
+                   android:textFontWeight="500"
+                   android:textSize="18sp"
+                   android:gravity="end" />
 
 
 
@@ -46,46 +56,41 @@
                    android:layout_height="500dp"
                    />
 
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:orientation="vertical"
-               android:background="#F9F9F9">
+
                <LinearLayout
                    android:id="@+id/dotsLayout"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
+                   android:layout_marginTop="20dp"
                    android:gravity="center"
                    android:orientation="horizontal" >
 
                </LinearLayout>
 
-           <LinearLayout
-               android:id="@+id/getStarted"
-               android:visibility="gone"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="60dp"
-               android:background="@drawable/color_text">
-
-               <TextView
+               <LinearLayout
+                   android:id="@+id/getStarted"
+                   android:visibility="gone"
                    android:layout_width="match_parent"
-                   android:layout_height="50dp"
-                   android:fontFamily="@font/nunito_sans"
-                   android:gravity="center_vertical"
-                   android:text="Get Started"
-                   android:textAlignment="center"
-                   android:textColor="@color/white"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="60dp"
+                   android:background="@drawable/color_text">
 
-                   android:textFontWeight="500"
-                   android:textSize="20sp" />
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="50dp"
+                       android:fontFamily="@font/nunito_sans"
+                       android:gravity="center_vertical"
+                       android:text="Get Started"
+                       android:textAlignment="center"
+                       android:textColor="@color/white"
+                       android:textFontWeight="500"
+                       android:textSize="20sp" />
 
 
-           </LinearLayout>
+               </LinearLayout>
            </LinearLayout>
 
        </LinearLayout>
+   </LinearLayout>
 
-
-    </LinearLayout>
 </layout>

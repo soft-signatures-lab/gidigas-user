@@ -20,6 +20,9 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <LinearLayout
 
@@ -44,10 +47,11 @@
                     android:orientation="vertical">
 
                     <TextView
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nunito_sans"
-                        android:text="First name"
+                        android:text="@string/firstName"
                         android:textColor="@color/bluish"
                         android:textFontWeight="500"
                         android:textSize="14sp" />
@@ -70,7 +74,7 @@
                             android:layout_marginLeft="35dp"
                             android:drawablePadding="20dp"
                             android:fontFamily="@font/nunito_sans_italic"
-                            android:hint="Type your first name here"
+                            android:hint="@string/hintFirstName"
                             android:inputType="text"
                             android:paddingBottom="20dp"
                             android:textSize="12sp" />
@@ -90,7 +94,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nunito_sans"
-                        android:text="Surname"
+                        android:text="@string/lastName"
                         android:textColor="@color/bluish"
                         android:textFontWeight="500"
                         android:textSize="14sp" />
@@ -113,7 +117,7 @@
                             android:layout_marginLeft="35dp"
                             android:drawablePadding="20dp"
                             android:fontFamily="@font/nunito_sans_italic"
-                            android:hint="Type your surname here"
+                            android:hint="@string/hintSurName"
                             android:inputType="textEmailAddress"
                             android:paddingBottom="20dp"
                             android:textSize="12sp" />
@@ -133,7 +137,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nunito_sans"
-                        android:text="Mobile Number"
+                        android:text="@string/mobile"
                         android:textColor="@color/bluish"
                         android:textFontWeight="500"
                         android:textSize="14sp" />
@@ -150,13 +154,13 @@
                             app:srcCompat="@drawable/ic_register" />
 
                         <EditText
-                            android:id="@+id/email"
+                            android:id="@+id/phone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="35dp"
                             android:drawablePadding="20dp"
                             android:fontFamily="@font/nunito_sans_italic"
-                            android:hint="Type your mobile number here"
+                            android:hint="@string/hintMobile"
                             android:inputType="textEmailAddress"
                             android:paddingBottom="20dp"
                             android:textSize="12sp" />
@@ -189,6 +193,7 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="40dp"
+                android:layout_marginBottom="20dp"
                 android:orientation="vertical"
                 android:visibility="gone">
 
@@ -201,7 +206,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nunito_sans"
-                        android:text="Email"
+                        android:text="@string/email"
                         android:textColor="@color/bluish"
                         android:textFontWeight="500"
                         android:textSize="14sp" />
@@ -224,7 +229,7 @@
                             android:layout_marginLeft="35dp"
                             android:drawablePadding="20dp"
                             android:fontFamily="@font/nunito_sans_italic"
-                            android:hint="Type your username here"
+                            android:hint="@string/hintEmail"
                             android:inputType="textEmailAddress"
                             android:paddingBottom="20dp"
                             android:textSize="12sp" />
@@ -244,7 +249,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nunito_sans"
-                        android:text="Password"
+                        android:text="@string/password"
                         android:textColor="@color/bluish"
                         android:textFontWeight="500"
                         android:textSize="14sp" />
@@ -265,14 +270,14 @@
                             app:passwordToggleEnabled="true">
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/password"
+                                android:id="@+id/passwordReg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="35dp"
                                 android:layout_marginTop="10dp"
                                 android:drawablePadding="20dp"
                                 android:fontFamily="@font/nunito_sans_italic"
-                                android:hint="Type your password here"
+                                android:hint="@string/hintPassword"
                                 android:inputType="textPassword"
                                 android:paddingBottom="20dp"
                                 android:textSize="12sp" />
@@ -294,7 +299,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nunito_sans"
-                        android:text="Confirm Password"
+                        android:text="@string/Confirm"
                         android:textColor="@color/bluish"
                         android:textFontWeight="500"
                         android:textSize="14sp" />
@@ -322,7 +327,7 @@
                                 android:layout_marginTop="10dp"
                                 android:drawablePadding="20dp"
                                 android:fontFamily="@font/nunito_sans_italic"
-                                android:hint="retype your password here"
+                                android:hint="@string/hintConfirmPassword"
                                 android:inputType="textPassword"
                                 android:paddingBottom="20dp"
                                 android:textSize="12sp" />
@@ -338,13 +343,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                   >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nunito_sans"
-                        android:text="Referral (optional)"
+                        android:text="@string/referral"
                         android:textColor="@color/bluish"
                         android:textFontWeight="500"
                         android:textSize="14sp" />
@@ -367,7 +373,7 @@
                             android:layout_marginLeft="35dp"
                             android:drawablePadding="20dp"
                             android:fontFamily="@font/nunito_sans_italic"
-                            android:hint="Type a referral code here"
+                            android:hint="@string/hintReferral"
                             android:inputType="number"
                             android:paddingBottom="20dp"
                             android:textSize="12sp" />
@@ -386,7 +392,7 @@
                     app:srcCompat="@drawable/ic_back_reg" />
 
                 <Button
-                    android:id="@+id/BtnLogin"
+                    android:id="@+id/BtnSignUp"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"
@@ -398,8 +404,12 @@
                     android:textSize="18sp" />
 
 
+
             </LinearLayout>
 
         </LinearLayout>
+
+
+        </FrameLayout>
     </ScrollView>
 </layout>

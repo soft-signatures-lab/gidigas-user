@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ui.order.OrderActiveFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_marginBottom="50dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+           >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/bg_history"
+                android:orientation="vertical"
+                android:gravity="fill"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Dispatcher"
+                    android:textAlignment="center"
+                    android:textColor="@color/bluish"
+                    android:textFontWeight="600"
+                    android:textSize="13sp" />
+
+                <View
+                    android:layout_width="185dp"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#E0E0E0" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="5dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/dispatcherImage"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/gasterminalling_lite_gas" />
+
+
+                    <TextView
+                        android:id="@+id/dispatcherName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/dispatcherImage"
+                        android:fontFamily="@font/nunito_sans"
+                        android:text="Tunde Bakare"
+                        android:textColor="#333333"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/dispatcherNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/dispatcherName"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/dispatcherImage"
+                        android:fontFamily="@font/nunito_sans"
+                        android:text="08112345678"
+                        android:textColor="#6d6d6d"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:background="@drawable/bg_history"
+                android:orientation="vertical"
+                android:gravity="fill"
+                android:paddingBottom="18dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Vendor"
+                    android:textAlignment="center"
+                    android:textColor="@color/bluish"
+                    android:textFontWeight="600"
+                    android:textSize="13sp" />
+
+                <View
+                    android:layout_width="185dp"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#E0E0E0" />
+
+
+                <TextView
+                    android:id="@+id/Vendor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Uche &amp; Sons LTD"
+                    android:textAlignment="center"
+                    android:textColor="#333333"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/vendorAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Yaba"
+                    android:textAlignment="center"
+                    android:textColor="#6d6d6d"
+                    android:textSize="13sp" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/bg_history"
+                android:orientation="vertical"
+                android:paddingBottom="18dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Invoice"
+                    android:textAlignment="center"
+                    android:textColor="@color/bluish"
+                    android:textFontWeight="600"
+                    android:textSize="13sp" />
+
+                <View
+                    android:layout_width="185dp"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#E0E0E0" />
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="N3,500"
+                    android:textAlignment="center"
+                    android:textColor="#333333"
+                    android:textSize="13sp" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="3kg x2"
+                    android:textAlignment="center"
+                    android:textColor="#6d6d6d"
+                    android:textSize="13sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_history"
+                android:orientation="vertical"
+                android:paddingBottom="18dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Address"
+                    android:textAlignment="center"
+                    android:textColor="@color/bluish"
+                    android:textFontWeight="600"
+                    android:textSize="13sp" />
+
+                <View
+                    android:layout_width="185dp"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#E0E0E0" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="house 2a Hughes County,\n Alagomeji-yaba"
+                    android:textAlignment="center"
+                    android:textColor="#333333"
+                    android:textSize="13sp" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/nunito_sans"
+            android:text="Order Status"
+            android:textAlignment="center"
+            android:textColor="#4F4F4F"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            android:paddingBottom="20dp"
+            android:background="@drawable/bg_history"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/bg_white"
+                android:orientation="vertical"
+                android:paddingTop="7dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:id="@+id/accept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Order accepted"
+                    android:textColor="@color/bluish"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/accept"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="11:33 AM"
+                    android:textColor="#777777"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    app:srcCompat="@drawable/ic_mark" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tee1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Dispatcher enroute"
+                    android:textColor="#777777"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/tee1"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/bluish"
+                        android:rotation="270" />
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/bluish"
+                        android:rotation="270" />
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/bluish"
+                        android:rotation="270" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/bg_white"
+                android:orientation="vertical"
+                android:paddingTop="7dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:id="@+id/accept1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Dispatcher has arrived"
+                    android:textColor="@color/bluish"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/accept1"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="11:33 AM"
+                    android:textColor="#777777"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    app:srcCompat="@drawable/ic_mark" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/bg_white"
+                android:orientation="vertical"
+                android:paddingTop="7dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:id="@+id/accept2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Cylinder picked"
+                    android:textColor="@color/bluish"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/accept2"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="11:33 AM"
+                    android:textColor="#777777"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    app:srcCompat="@drawable/ic_mark" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Enroute Gas station"
+                    android:textColor="#777777"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/tee"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/bluish"
+                        android:rotation="270" />
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/bluish"
+                        android:rotation="270" />
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/bluish"
+                        android:rotation="270" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/bg_white"
+                android:orientation="vertical"
+                android:paddingTop="7dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:id="@+id/accept3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Cylinder Filled"
+                    android:textColor="@color/bluish"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/accept3"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="11:33 AM"
+                    android:textColor="#777777"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    app:srcCompat="@drawable/ic_mark" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tee2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Return trip"
+                    android:textColor="#777777"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/tee2"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/bluish"
+                        android:rotation="270" />
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/bluish"
+                        android:rotation="270" />
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/bluish"
+                        android:rotation="270" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/bg_white"
+                android:orientation="vertical"
+                android:paddingTop="7dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:id="@+id/accept4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Order Picked"
+                    android:textColor="@color/bluish"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/accept4"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="11:33 AM"
+                    android:textColor="#777777"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    app:srcCompat="@drawable/ic_mark" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

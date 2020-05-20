@@ -51,7 +51,7 @@ public class ApiHeader {
     public static final class ProtectedApiHeader {
 
         @Expose
-        @SerializedName("Authorization")
+        @SerializedName("x-access-token")
         private String Authorization;
 
         public ProtectedApiHeader(String Authorization) {

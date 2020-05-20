@@ -25,7 +25,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="20dp">
 
             <ImageView
                 android:id="@+id/backArrow"
@@ -64,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_sans"
-                android:text="FAQs"
+                android:text="@string/faq"
                 android:textColor="@color/bluish"
                 android:textSize="18sp" />
 
@@ -82,7 +82,7 @@
                 android:layout_marginTop="20dp"
                 android:textColor="@color/bluish"
                 android:fontFamily="@font/nunito_sans"
-                android:text="Contact"
+                android:text="@string/contact"
                 android:textSize="18sp" />
 
 
@@ -99,7 +99,7 @@
                 android:layout_marginTop="20dp"
                 android:textColor="@color/bluish"
                 android:fontFamily="@font/nunito_sans"
-                android:text="Terms and Conditions"
+                android:text="@string/terms"
                 android:textSize="18sp" />
 
 
@@ -116,7 +116,7 @@
                 android:textColor="@color/bluish"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/nunito_sans"
-                android:text="Privacy Policy"
+                android:text="@string/privacy"
                 android:textSize="18sp" />
 
             <View

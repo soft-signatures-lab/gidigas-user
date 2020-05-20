@@ -11,9 +11,11 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.enyata.framework.mvvm.BR;
 import com.enyata.framework.mvvm.R;
@@ -26,7 +28,14 @@ import com.enyata.framework.mvvm.ui.map.MapsActivity;
 import com.enyata.framework.mvvm.ui.order.OrderActivity;
 import com.enyata.framework.mvvm.ui.payment.PaymentActivity;
 import com.enyata.framework.mvvm.ui.support.SupportActivity;
+import com.enyata.framework.mvvm.ui.vendor.VendorActivity;
 import com.google.android.material.navigation.NavigationView;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import javax.inject.Inject;
 
@@ -37,6 +46,12 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding,HomeViewModel
     HomeViewModel homeViewModel;
     DrawerLayout drawer;
     ImageView imageView;
+    String firstName,surName;
+    TextView userName;
+    NavigationView navigationView;
+    TextView navFullName;
+    TextView dates;
+
 
     @Override
     public int getBindingVariable() {
@@ -60,6 +75,20 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding,HomeViewModel
         activityHomeBinding = getViewDataBinding();
         homeViewModel.setNavigator(this);
 
+        firstName = homeViewModel.getFirstName();
+        surName = homeViewModel.getSurName();
+
+        userName = activityHomeBinding.homeText1;
+        userName.setText("Hello" + " " + firstName);
+
+        Log.d("firstname",firstName);
+        Log.d("surname",surName);
+
+      navigationView = activityHomeBinding.navView;
+        View headerView = navigationView.getHeaderView(0);
+        navFullName = headerView.findViewById(R.id.fullNames);
+        navFullName.setText(firstName + " " + surName);
+
         imageView = findViewById(R.id.navigationDrawerIcon);
         imageView.setOnClickListener(this);
 
@@ -69,12 +98,15 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding,HomeViewModel
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-
         navigationView.setItemIconTintList(null);
 
+        dates = activityHomeBinding.date;
+
+        DateFormat df = new SimpleDateFormat("EEEE, d - MMM");
+        String date = df.format(Calendar.getInstance().getTime());
+        dates.setText(date);
 
     }
-
 
     @Override
     public void onhelp() {
@@ -95,10 +127,11 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding,HomeViewModel
     }
 
     @Override
-    public void onaddress() {
-        Intent intent = new Intent(getApplicationContext(), AddressActivity.class);
+    public void onvendor() {
+        Intent intent = new Intent(getApplicationContext(), VendorActivity.class);
         startActivity(intent);
     }
+
 
     @Override
     public void onpayment() {

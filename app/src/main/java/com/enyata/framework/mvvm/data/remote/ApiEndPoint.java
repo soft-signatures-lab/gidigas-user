@@ -26,8 +26,9 @@ import com.enyata.framework.mvvm.BuildConfig;
 
 public final class ApiEndPoint {
 
-    public  static final String SUPER_AGENT_LOGIN = BuildConfig.BASE_URL + "/login";
-
+    public  static final String GIDI_GAS_USER_SIGNUP = BuildConfig.BASE_URL + "/auth/signup";
+    public static final String GIDI_GAS_USER_LOGIN = BuildConfig.BASE_URL + "/auth/login";
+    public static final String GIDI_GAS_VENDOR = BuildConfig.BASE_URL + "/vendor";
 
     private ApiEndPoint() {
         // This class is not publicly instantiable

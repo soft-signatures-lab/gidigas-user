@@ -27,15 +27,15 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="20dp">
 
                 <ImageView
                     android:id="@+id/OrderInfo"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="20dp"
                     app:srcCompat="@drawable/ic_arrow2" />
 
                 <TextView
@@ -44,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/OrderInfo"
                     android:fontFamily="@font/nunito_sans"
-                    android:text="Create Orders"
+                    android:text="@string/orders"
                     android:textColor="#298DCC"
                     android:textFontWeight="600"
                     android:textSize="18sp" />
@@ -76,7 +76,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:fontFamily="@font/nunito_sans"
-                    android:text="Location"
+                    android:text="@string/location"
                     android:textColor="@color/white"
                     android:textFontWeight="600"
                     android:textSize="16sp" />
@@ -106,7 +106,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/bg_button"
-
                 android:padding="10dp">
 
                 <TextView
@@ -114,7 +113,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:fontFamily="@font/nunito_sans"
-                    android:text="Vendor"
+                    android:text="@string/vendor"
                     android:textColor="@color/white"
                     android:textFontWeight="600"
                     android:textSize="16sp" />
@@ -148,6 +147,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="13dp"
+                    android:layout_marginTop="2dp"
                     android:layout_toRightOf="@+id/orderImage"
                     android:fontFamily="@font/nunito_sans"
                     android:text="AP Energy"
@@ -160,7 +160,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="6dp"
                     android:layout_marginRight="120dp"
                     android:fontFamily="@font/nunito_sans"
                     android:text="4.4/5"
@@ -173,7 +173,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="6dp"
                     android:layout_marginRight="20dp"
                     android:fontFamily="@font/nunito_sans"
                     android:text="N80/kg"
@@ -197,7 +197,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:fontFamily="@font/nunito_sans"
-                    android:text="Cylinder Size"
+                    android:text="@string/size"
                     android:textColor="@color/white"
                     android:textFontWeight="600"
                     android:textSize="16sp" />
@@ -250,17 +250,20 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:layout_marginRight="12dp"
+                                android:visibility="gone"
                                 app:srcCompat="@drawable/ic_angle_side" />
 
                             <TextView
+                                android:id="@+id/kiloGram"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
-                                android:text="3kg"
+                                android:text="0"
                                 android:textColor="@color/bluish"
                                 android:textSize="14sp" />
 
                             <ImageView
+                                android:id="@+id/angle2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="12dp"
@@ -310,84 +313,84 @@
 
 
             </LinearLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/order"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="280dp"
-            android:background="#298DCC"
-            android:onClick="@{()->viewModel.OnCart()}">
-
-            <RelativeLayout
+            <LinearLayout
+                android:id="@+id/order"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp">
+                android:layout_height="50dp"
+                android:layout_marginTop="280dp"
+                android:background="#298DCC"
+                android:onClick="@{()->viewModel.OnCart()}">
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/item"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/nunito_sans"
-
-                        android:text="1 Items"
-                        android:textColor="@color/white"
-                        android:textFontWeight="600" />
-
-                    <View
-                        android:id="@+id/view"
-                        android:layout_width="18dp"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_toRightOf="@+id/item"
-                        android:background="#E1E1E1"
-                        android:rotation="270" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/view"
-                        android:fontFamily="@font/nunito_sans"
-                        android:text="N1,500"
-
-                        android:textColor="@color/white"
-                        android:textFontWeight="600" />
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:orientation="horizontal">
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp">
 
-                    <TextView
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_sans"
+
+                            android:text="1 Items"
+                            android:textColor="@color/white"
+                            android:textFontWeight="600" />
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="18dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_toRightOf="@+id/item"
+                            android:background="#E1E1E1"
+                            android:rotation="270" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/view"
+                            android:fontFamily="@font/nunito_sans"
+                            android:text="N1,500"
+
+                            android:textColor="@color/white"
+                            android:textFontWeight="600" />
+                    </RelativeLayout>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="6dp"
-                        android:fontFamily="@font/nunito_sans"
-                        android:text="View cart"
-                        android:textColor="@color/white"
-                        android:textFontWeight="600"
-                        android:textSize="15sp" />
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        app:srcCompat="@drawable/ic_side_navbar" />
-                </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="6dp"
+                            android:fontFamily="@font/nunito_sans"
+                            android:text="View cart"
+                            android:textColor="@color/white"
+                            android:textFontWeight="600"
+                            android:textSize="15sp" />
 
-            </RelativeLayout>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            app:srcCompat="@drawable/ic_side_navbar" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+
         </LinearLayout>
+
+
     </LinearLayout>
 
 

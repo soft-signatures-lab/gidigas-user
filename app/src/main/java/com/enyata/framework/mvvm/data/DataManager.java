@@ -26,6 +26,15 @@ import java.util.List;
 
 
 public interface DataManager extends PreferencesHelper, ApiHelper {
+    void updateUserInfo(
+            String accessToken,
+            String firstname,
+            String surname
+            );
+
+    void updateLoginStatus(
+            LoggedInMode loggedInMode);
+
 
 
     enum LoggedInMode {

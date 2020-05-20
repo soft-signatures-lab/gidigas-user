@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.enyata.framework.mvvm.ui.cart.CartViewModel" />
+            type="com.enyata.framework.mvvm.ui.cart.CartViewModel"/>
     </data>
 
     <LinearLayout
@@ -27,7 +27,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="20dp">
 
                 <ImageView
                     android:id="@+id/arrowCart"
@@ -45,7 +45,8 @@
                     android:fontFamily="@font/nunito_sans"
                     android:text="Cart"
                     android:textColor="#298DCC"
-                    android:textFontWeight="600"
+                    android:textStyle="bold"
+                    android:textFontWeight="700"
                     android:textSize="18sp" />
 
 
@@ -103,6 +104,7 @@
                         android:layout_toRightOf="@+id/orderImage"
                         android:fontFamily="@font/nunito_sans"
                         android:text="AP Energy"
+                        android:layout_marginTop="5dp"
                         android:textColor="@color/white"
                         android:textFontWeight="300"
                         android:textSize="14sp" />
@@ -112,7 +114,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="6dp"
                         android:layout_marginRight="120dp"
                         android:fontFamily="@font/nunito_sans"
                         android:text="4.4/5"
@@ -125,7 +127,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="6dp"
                         android:layout_marginRight="20dp"
                         android:fontFamily="@font/nunito_sans"
                         android:text="N80/kg"
@@ -139,7 +141,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="135dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/bg_button"
                 android:orientation="vertical">
@@ -147,8 +149,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:orientation="vertical">
 
                     <RelativeLayout
@@ -183,8 +185,8 @@
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="12dp"
                             android:background="@drawable/ic_dark_layer"
-                            android:paddingLeft="4dp"
-                            android:paddingRight="4dp"
+
+                            android:padding="4dp"
                             android:text="N2300"
                             android:textAlignment="center"
                             android:textColor="@color/white"
@@ -231,8 +233,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="12dp"
                             android:background="@drawable/ic_dark_layer"
-                            android:paddingLeft="6dp"
-                            android:paddingRight="6dp"
+                           android:padding="4dp"
                             android:text="N1100"
                             android:textAlignment="center"
                             android:textColor="@color/white"
@@ -251,24 +252,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingLeft="5dp"
+
                         android:background="@drawable/ic_dark_layer"
                         android:orientation="horizontal"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="2dp">
+                       >
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:text="Add cylinder"
-
+                            android:layout_marginLeft="8dp"
+                            android:textSize="13sp"
                             android:textColor="@color/white" />
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_add" />
+                            app:srcCompat="@drawable/add_plus" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -278,7 +281,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="125dp"
+                android:layout_height="120dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/bg_button"
                 android:orientation="vertical">
@@ -286,8 +289,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:orientation="vertical">
 
                     <RelativeLayout
@@ -300,6 +303,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/nunito_sans"
+
                             android:text="Service fee"
                             android:textColor="@color/white" />
 
@@ -308,7 +312,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
-                            android:layout_marginRight="12dp"
+                            android:layout_marginRight="8dp"
+
 
                             android:paddingLeft="6dp"
                             android:paddingRight="6dp"
@@ -322,7 +327,7 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp">
+                        android:layout_marginTop="3dp">
 
                         <TextView
 
@@ -337,7 +342,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
-                            android:layout_marginRight="12dp"
+                            android:layout_marginRight="13dp"
                             android:text="N400"
                             android:textColor="@color/white"
                             android:textSize="13sp" />
@@ -348,7 +353,7 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp">
+                        android:layout_marginTop="3dp">
 
                         <TextView
 
@@ -393,10 +398,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
-                            android:layout_marginRight="12dp"
+                            android:layout_marginRight="8dp"
                             android:background="@drawable/ic_dark_layer"
-                            android:paddingLeft="6dp"
-                            android:paddingRight="6dp"
+                            android:padding="4dp"
                             android:text="N3,900"
                             android:textAlignment="center"
                             android:textColor="@color/white"
@@ -478,7 +482,7 @@
                 android:textFontWeight="500"
                 android:textSize="14sp" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -490,33 +494,32 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/toggle"
-                    android:checked="false"
                     android:drawableLeft="@drawable/cardbtn"
                     android:drawablePadding="20dp"
-                    android:paddingRight="30dp"
+                    android:paddingRight="50dp"
                     android:textColor="@drawable/toggle_text"
                     android:textOff="Pay Online"
                     android:textOn="Pay Online"
                     android:textSize="14sp" />
 
                 <ToggleButton
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
                     android:id="@+id/onDelivery"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginLeft="30dp"
                     android:background="@drawable/toggle"
-                    android:checked="false"
                     android:drawableLeft="@drawable/ic_cash_icon"
                     android:drawablePadding="20dp"
-                    android:paddingRight="20dp"
+                    android:paddingRight="40dp"
                     android:textColor="@drawable/toggle_text"
                     android:textOff="Pay On Delivery"
                     android:textOn="Pay On Delivery"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"/>
 
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <LinearLayout
                 android:id="@+id/onlineInfo"
@@ -574,35 +577,36 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/order"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background=" #298DCC"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Checkout"
+                    android:textColor="@color/white"
+                    android:textFontWeight="500"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="1dp"
+                    app:srcCompat="@drawable/ic_side_navbar" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/order"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="85dp"
-            android:background=" #298DCC"
-            android:gravity="center"
-            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_sans"
-                android:text="Checkout"
-                android:textColor="@color/white"
-                android:textFontWeight="500"
-                android:textSize="20sp" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="1dp"
-                app:srcCompat="@drawable/ic_side_navbar" />
-
-        </LinearLayout>
     </LinearLayout>
-
 
 </layout>

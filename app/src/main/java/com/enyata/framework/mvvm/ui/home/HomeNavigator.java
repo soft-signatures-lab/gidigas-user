@@ -4,7 +4,7 @@ public interface HomeNavigator {
     void onhelp();
     void onCreateorder();
     void onorder();
-    void  onaddress();
+    void  onvendor();
     void  onpayment();
 
 

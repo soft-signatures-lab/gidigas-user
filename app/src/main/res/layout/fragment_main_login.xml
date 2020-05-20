@@ -16,12 +16,14 @@
 
     </data>
 
-    <ScrollView
+    <FrameLayout
 
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
         <LinearLayout
 
             android:layout_width="match_parent"
@@ -47,7 +49,7 @@
                         android:fontFamily="@font/nunito_sans"
                         android:textFontWeight="500"
                         android:textColor="@color/bluish"
-                        android:text="Email"
+                        android:text="@string/email"
                         android:textSize="14sp" />
 
                     <RelativeLayout
@@ -62,13 +64,13 @@
                             app:srcCompat="@drawable/ic_mailicon" />
 
                         <EditText
-                            android:id="@+id/email"
+                            android:id="@+id/loginEmail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="35dp"
                             android:drawablePadding="20dp"
                             android:fontFamily="@font/nunito_sans_italic"
-                            android:hint="Type your username here"
+                            android:hint="@string/hintEmail"
                             android:inputType="textEmailAddress"
                             android:paddingBottom="20dp"
                             android:textSize="12sp" />
@@ -90,7 +92,7 @@
                         android:fontFamily="@font/nunito_sans"
                         android:textFontWeight="500"
                         android:textColor="@color/bluish"
-                        android:text="Password"
+                        android:text="@string/password"
                         android:textSize="14sp" />
 
                     <RelativeLayout
@@ -109,14 +111,14 @@
                             app:passwordToggleEnabled="true">
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/password"
+                                android:id="@+id/loginPassword"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="35dp"
                                 android:layout_marginTop="10dp"
                                 android:drawablePadding="20dp"
                                 android:fontFamily="@font/nunito_sans_italic"
-                                android:hint="Type your password here"
+                                android:hint="@string/hintPassword"
                                 android:inputType="textPassword"
                                 android:paddingBottom="20dp"
                                 android:textSize="12sp" />
@@ -134,7 +136,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/nunito_sans"
-                    android:text=" Forgot your password?"
+                    android:text="@string/forgot"
                     android:textColor="@color/orange"
                     android:textSize="14dp" />
 
@@ -146,8 +148,7 @@
                     android:layout_marginTop="50dp"
                     android:background="@drawable/bg_button"
                     android:fontFamily="@font/nunito_sans"
-                    android:onClick="@{()->viewModel.onLogin()}"
-                    android:text="Login"
+                    android:text="@string/login"
                     android:textAllCaps="false"
                     android:textColor="#fff"
                     android:textSize="18sp" />
@@ -156,5 +157,7 @@
             </LinearLayout>
 
         </LinearLayout>
-    </ScrollView>
+</ScrollView>
+
+    </FrameLayout>
 </layout>

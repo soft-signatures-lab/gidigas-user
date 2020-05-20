@@ -1,0 +1,107 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/Userinfo"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+   android:layout_marginBottom="20dp"
+    android:layout_marginTop="17dp"
+    android:background="@drawable/bg_history"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/iconImage"
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        app:srcCompat="@drawable/ic_history"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:id="@+id/fullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_sans"
+                android:text="firstName lastName"
+                android:textColor="#3795EB"
+                android:textFontWeight="600"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="7dp"
+                android:fontFamily="@font/nunito_sans"
+                android:text="Successful"
+                android:textFontWeight="600"
+                android:textColor=" #27AE60"
+                android:textSize="12sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_sans"
+                android:text="N3,500"
+                android:textColor="#333333"
+                android:textFontWeight="600"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/kilogram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/nunito_sans"
+                android:text="3KG 3KG"
+                android:layout_marginRight="7dp"
+                android:textFontWeight="600"
+                android:textColor=" #333333"
+                android:textSize="12sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:id="@+id/codeno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_sans"
+                android:text="GG12345678"
+                android:textColor="#828282"
+                android:textFontWeight="100"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/dated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/nunito_sans"
+                android:text="12/12/2019"
+                android:layout_marginRight="7dp"
+                android:textFontWeight="100"
+                android:textColor="#828282"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

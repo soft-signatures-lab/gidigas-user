@@ -3,6 +3,10 @@
     <item android:drawable="@drawable/bg_button"
         android:state_checked="true"
        />
+    <item android:drawable="@drawable/bg_button"
+        android:state_focused="true"
+        android:state_pressed="true"/>
+
     <item android:drawable="@drawable/gray"
         android:state_checked="false"
 

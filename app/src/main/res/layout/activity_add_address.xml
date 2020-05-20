@@ -15,22 +15,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="20dp">
 
             <ImageView
                 android:id="@+id/arrow"
                 android:onClick="@{()->viewModel.OnBackAddress()}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="22dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="18dp"
                 app:srcCompat="@drawable/ic_arrow2" />
 
             <TextView
@@ -40,7 +40,7 @@
                 android:layout_toRightOf="@id/arrow"
                 android:fontFamily="@font/nunito_sans"
                 android:text="Add Address"
-                android:textFontWeight="600"
+                android:textFontWeight="700"
                 android:textColor="#298DCC"
                 android:textSize="18sp" />
 
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginLeft="45dp"
+            android:layout_marginLeft="30dp"
             android:orientation="vertical">
 
             <TextView
@@ -131,7 +131,7 @@
                     android:layout_width="match_parent"
                     android:paddingLeft="10dp"
                     android:paddingBottom="10dp"
-                    android:textSize="14sp"
+                    android:textSize="15sp"
                     android:textColorHint="#6D6D6D"
                     android:layout_height="70dp"
                     android:background="@drawable/spinner_bg"
@@ -157,9 +157,9 @@
                     android:layout_height="90dp"
                     android:paddingLeft="10dp"
                     android:paddingBottom="25dp"
-                    android:textSize="14sp"
+                    android:textSize="15sp"
                     android:textColorHint="#6D6D6D"
-                    android:hint="provide additional info on delivery \n instructions or just heads up"
+                    android:hint="provide additional info on delivery\ninstructions or just heads up"
                     android:background="@drawable/spinner_bg"
                     android:inputType="text" />
             </LinearLayout>
